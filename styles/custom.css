@@ -3,7 +3,7 @@
 
 body {
   margin: 0;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -211,7 +211,7 @@ label {
 }
 
 .menu-btn {
-  display: none;
+  display: none !important;
 }
 .side-menu {
   width: 100vw;
@@ -256,7 +256,7 @@ label {
     text-decoration: none;
   }
   .menu-btn {
-    display: block;
+    display: block !important;
   }
   .side-menu-open {
     right: 0;

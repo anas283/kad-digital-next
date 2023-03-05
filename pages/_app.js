@@ -1,13 +1,19 @@
-import Head from "next/head";
+import { useEffect } from "react";
 import "../styles/custom.css";
+import store from '../store/store';
+import { Provider } from 'react-redux';
 
 function MyApp({ Component, pageProps }) {
+
+  useEffect(() => {
+    require('bootstrap/dist/css/bootstrap.css');
+  },[])
+
   return (
     <>
-      {/* <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head> */}
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </>
   );
 }
