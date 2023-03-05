@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+:root {
+  --primary-blue: #1467EA;
+  --secondary-blue: #ECF5FB;
+  --primary-green: #26A262;
+  --secondary-green: #D9EEE1;
+  --primary-red: #B73744;
+  --secondary-red: #ECD2D5;
+  --primary-yellow: #b5a02d;
+  --secondary-yellow: #f9f2dd;
+  --dark: #444A56;
+  --gray: #687385;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+.fw-600 {
+  font-weight: 600;
+}
+
+.navbar-kd {
+  border-bottom: 1px solid #F3F4F6;
+}
+nav .navigation .menu {
+  cursor: pointer;
+  color: #374151;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+nav .navigation .menu:hover {
+  color: var(--primary-blue);
+}
+nav .logo {
+  width: 130px;
+}
+
+.hero-section .title {
+  font-size: 50px;
+}
+.hero-section .subtitle {
+  font-size: 18px;
+}
+.hero-section .image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-section .image-box img {
+  height: 600px;
+}
+.text-gradient {
+  color: #9175FC;
+  background-image: -webkit-linear-gradient(0deg, #9175FC 15%,#BB95D1 50%,#64CDE9 85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.btn-primary {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  border-radius: 50px;
+  padding: 8px 24px;
+  border: 0;
+}
+
+.btn-animated {
+  text-align: center;
+  color: rgba(255,255,255,0.9);
+  border-radius: 50px;
+  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+  background-size: 600%;
+  -webkit-animation: anime 16s linear infinite;
+  animation: anime 16s linear infinite;
+}
+@keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.features-section .icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.how-section .item {
+  position: relative;
+  padding-left: 40px !important;
+}
+.how-section .item .numbering {
+  width: 50px;
+  height: 50px;
+  color: #49b4d2;
+  background-color: white;
+  border: 2px solid #49b4d2;
+  border-radius: 50px;
+  position: absolute;
+  top: 20px;
+  left: -25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.mockup-section .mockup-item {
+  cursor: pointer;
+  position: relative;
+}
+.mockup-section .mockup-item .btn {
+  width: fit-content;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mockup-section .mockup-item:hover .btn {
+  opacity: 1;
+  bottom: 20px;
+}
+.mockup-section .mockup-item img {
+  transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (min-width: 991px) {
+  .mockup-section .mockup-item:hover img {
+    transform: scale(1.05);
+  }
+}
+@media only screen and (max-width: 991px) {
+  .mockup-section .mockup-item .btn {
+    transform: scale(0.9);
+    bottom: 15px;
+  }
+}
+
+.card {
+  border: 1px solid #E4E8EE;
+}
+
+label {
+  font-size: 14px;
+  color: #4f4f4f;
+}
+
+.text-error {
+  font-size: 14px;
+}
+
+.text-ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footer {
+  background-color: black;
+}
+.footer .logo {
+  width: 130px;
+}
+.footer .menu-links .link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.footer .menu-links .link:hover {
+  color: var(--primary-blue) !important;
+}
+.footer .copyright {
+  border-top: 1px solid #202A37;
+}
+
+.menu-btn {
+  display: none;
+}
+.side-menu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background-color: white;
+  z-index: 5;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.btn-contoh {
+  font-size: 13px;
+  transform: translate(10px, -1px);
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-kd .logo {
+    margin-left: 10px;
+  }
+  .navbar-kd .navigation {
+    display: none !important;
+  }
+  .hero-section .title {
+    font-size: 34px;
+    text-align: center;
+  }
+  .hero-section .subtitle {
+    font-size: 16px;
+    text-align: center;
+  }
+  .hero-section .image-box img {
+    height: 400px;
+    margin-top: 50px;
+  }
+  .hero-section .center-sm {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+  .side-menu-open {
+    right: 0;
+    opacity: 1;
+  }
+  .side-menu .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+  }
+  .side-menu .menu {
+    font-size: 26px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+  }
+  .side-menu .menu:hover {
+    color: var(--primary-blue);
+  }
+  .side-menu .btn-login {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .footer {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .footer .logo {
+    display: block;
+    margin: 0 auto;
+  }
+  .footer .description {
+    text-align: center;
+  }
+  .footer .menu-title {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .footer .menu-links {
+    text-align: center;
+  }
+  .footer .copyright {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-height: 768px) and (max-width: 991px) {
+  .hero-section .title {
+    font-size: 34px;
+    text-align: center;
+    margin-top: 100px;
+  }
+  .hero-section .subtitle {
+    font-size: 16px;
+    text-align: center;
+  }
+  .hero-section .image-box img {
+    height: 400px;
+    margin-top: 50px;
+  }
+  .hero-section .center-sm {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+}
