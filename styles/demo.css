@@ -1,0 +1,232 @@
+.design-wrapper {
+  width: 350px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+
+.design-image {
+  width: 350px;
+  height: 100vh;
+  max-height: 700px;
+  position: relative;
+}
+
+.design-image .bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-curve {
+  font-family: "Kaushan Script", cursive;
+}
+
+.main-content {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content .main-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.bride-name {
+  font-size: 28px;
+}
+
+.box-day,
+.box-time {
+  width: 60px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 2px 10px;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+}
+
+.box-date .month,
+.box-date .year {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+.box-date .day {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.divider {
+  width: 90%;
+  height: 2px;
+  background-color: #cecece;
+  margin: 0 auto;
+}
+
+.btn-light {
+  text-align: flex-start;
+  border: 1px solid #CED4DA;
+}
+.btn-light::after {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+}
+.dropdown .dropdown-item {
+  cursor: pointer;
+}
+
+.guest-book-swiper {
+  height: 150px;
+}
+.guest-book-swiper .wish-content {
+  width: 100%;
+  height: 150px;
+}
+.guest-book-swiper .wish-content .guest-wish {
+  font-style: italic;
+}
+.guest-book-swiper .wish-content .guest-name {
+  margin-top: 15px;
+}
+
+.swiper-pagination {
+  transform: translateY(0px) !important;
+}
+
+.card-menu {
+  width: 350px;
+  height: 75px;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  z-index: 15;
+  transition: all 0.3s ease-in-out;
+  padding-bottom: 10px;
+}
+.card-menu .menu {
+  cursor: pointer;
+}
+.card-menu .menu .icon {
+  transition: all 0.2s ease-in;
+}
+.card-menu .card-title {
+  font-size: 13px;
+  transition: all 0.2s ease-in;
+}
+.card-menu .menu:hover .icon,
+.card-menu .menu:hover .card-title {
+  color: var(--primary) !important;
+}
+.card-hide {
+  bottom: -75px;
+}
+.card-menu .btn-pause {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -55px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  transform: all 0.3s ease-in-out;
+  opacity: 1;
+}
+.card-hide {
+  opacity: 0;
+}
+
+.ant-drawer {
+  bottom: 60px;
+  z-index: 10;
+}
+.ant-drawer-content-wrapper {
+  height: 250px !important;
+}
+.ant-drawer-title {
+  font-weight: bold;
+}
+.ant-drawer-close {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+.menu-content .menu-item {
+  border-bottom: 1px solid #e8e8e8;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.menu-content .menu-item:last-child {
+  border-bottom: none;
+}
+.menu-content .menu-item .menu-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 6px;
+}
+.menu-content .menu-item .btn {
+  font-size: 14px;
+}
+.menu-content .menu-item .menu-subtitle {
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: -5px !important;
+}
+.main-content .menu-item .qr-image {
+  width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+  .design-wrapper {
+    width: 100vw;
+  }
+  .design-image {
+    width: 100vw;
+    max-height: unset;
+  }
+  .card-menu {
+    width: 100vw;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .ant-drawer {
+    width: 350px;
+    margin: 0 auto;
+  }
+
+  .rvsp-section {
+    height: 100% !important;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+  
+  .design-wrapper .vh-100 {
+    height: 100% !important;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+}

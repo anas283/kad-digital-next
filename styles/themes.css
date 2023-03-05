@@ -1,0 +1,1184 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+/* general */
+.greetings-section .parents-full-name,
+.greetings-section .bride-full-name {
+  font-size: 18px;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bold;
+}
+
+.design-wrapper .itinerary .box {
+  height: 35px;
+  margin-top: 10px;
+  border-bottom: 1px solid #9fa7ae;
+}
+.design-wrapper .itinerary .box:last-child {
+  border-bottom: 0;
+}
+.design-wrapper .itinerary .time {
+  text-align: end;
+}
+.design-wrapper .itinerary .detail {
+  margin-left: 20px;
+  transform: translateY(-3px);
+  opacity: 0.8;
+}
+
+.design-wrapper .info-bold {
+  font-size: 15px;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bold;
+}
+.design-wrapper .title-bold {
+  font-size: 16px;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bold;
+}
+
+.design-wrapper .guest-book {
+  margin-top: 50px;
+}
+.design-wrapper .wish-content .guest-wish {
+  font-weight: 400;
+  font-style: italic;
+}
+.design-wrapper .wish-content .guest-name {
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.rvsp-section {
+  height: 80vh;
+  background-size: cover;
+  background-size: cover !important;
+}
+.rvsp-section .card {
+  position: relative;
+  z-index: 2;
+}
+
+.countdown-section .card .title {
+  color: black;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 4px;
+}
+.countdown-section .card .subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: -5px;
+  color: #687385;
+}
+
+.design-image {
+  position: relative;
+}
+.card-opener {
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.card-opener .left-box {
+  width: 193px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -5%;
+  z-index: 2;
+  transition: all 2s ease-in-out;
+  background-color: white;
+}
+.card-opener .right-box {
+  width: 175px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  transition: all 2s ease-in-out;
+  background-color: white;
+}
+.card-opener .left-box .info {
+  color: #77808e;
+  position: absolute;
+  right: -25px;
+  bottom: 25%;
+  transform: rotate(-90deg);
+}
+.card-opener .circle {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: white;
+  border-radius: 100px;
+  z-index: 2;
+  transition: all 2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.card-opener .circle .bride-name {
+  font-size: 40px;
+  font-family: 'Dancing Script', cursive;
+  margin-top: 7px;
+}
+.card-opened .circle {
+  opacity: 1;
+  left: -50%;
+}
+.card-opened .left-box {
+  opacity: 1;
+  left: -100%;
+}
+.card-opened .right-box {
+  opacity: 1;
+  right: -100%;
+}
+@media only screen and (max-width: 500px) {
+  .card-opener .left-box {
+    width: 55vw;
+  }
+  .card-opener .right-box {
+    width: 50vw;
+  }
+}
+
+.bride-content .date-info {
+  width: fit-content;
+  margin: 0 auto;
+}
+.bride-content .main-title {
+  font-size: 16px !important;
+  font-family: 'Cinzel', serif !important;
+}
+.bride-content .bride-name {
+  font-size: 40px !important;
+  font-family: 'Cinzel', serif !important;
+  font-weight: bold !important;
+}
+.bride-content .day {
+  font-family: 'Outfit' !important;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-left: 2px solid #BBBBBB;
+  border-right: 2px solid #BBBBBB;
+}
+.bride-content .month,
+.bride-content .year {
+  font-family: 'Cinzel', serif !important;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* general */
+
+/* theme ocean blue */
+.ocean-blue-hero {
+  position: relative;
+}
+.design-opened .ocean-blue-hero .flower-big-top {
+  animation: fadeInToLeft ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  opacity: 1;
+}
+.ocean-blue-hero .flower-big-top {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  z-index: 2;
+  opacity: 0;
+}
+.design-opened .ocean-blue-hero .flower-big-bottom {
+  animation: fadeInToRight ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  opacity: 1;
+}
+.ocean-blue-hero .flower-big-bottom {
+  position: absolute;
+  bottom: -40px;
+  left: -20px;  
+  opacity: 0;
+}
+.design-opened .main-content {
+  animation: fadeIn ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;  
+  opacity: 1;
+}
+.design-opened .ocean-blue-hero .blue-frame-box {
+  opacity: 1;
+}
+.ocean-blue-hero .blue-frame-box {
+  position: absolute;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%,-50%) !important;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+.ocean-blue-hero .flower-frame-top {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+}
+.ocean-blue-hero .flower-frame-bottom {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+}
+
+@keyframes fadeInToLeft {
+  0% {
+    opacity: 0;
+    top: -20px;
+    right: -20px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+    right: 0;
+  }
+}
+@keyframes fadeInToRight {
+  0% {
+    opacity: 0;
+    bottom: -40px;
+    left: -20px;  
+  }
+  100% {
+    opacity: 1;
+    bottom: -20px;
+    left: 0;  
+  }
+}
+
+.bg-ocean-blue {
+  background-image: url('https://ik.imagekit.io/kaddigital/ocean-blue-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media only screen and (min-width: 768px) {
+  .ocean-blue-hero .flower-big-top {
+    width: 170px;
+  }
+  .ocean-blue-hero .flower-big-bottom {
+    width: 170px;
+  }
+}
+/* theme ocean blue */
+
+
+/* magestic gold */
+.magestic-gold-hero {
+  position: relative;
+}
+.magestic-gold-hero .flower-big-top {
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  opacity: 0;
+}
+.design-opened .magestic-gold-hero .flower-big-top {
+  animation: fadeInToRight_gold ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  z-index: 2;
+  transform: scale(0.85);
+  opacity: 1;
+}
+.magestic-gold-hero .flower-big-bottom {
+  position: absolute;
+  bottom: -60px;
+  right: -60px;  
+  opacity: 0;
+}
+.design-opened .magestic-gold-hero .flower-big-bottom {
+  animation: fadeInToLeft_gold ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  z-index: 2;
+  transform: scale(0.85);
+  opacity: 1;
+}
+@keyframes fadeInToRight_gold {
+  0% {
+    opacity: 0;
+    top: -70px;
+    left: -70px;  
+  }
+  100% {
+    opacity: 1;
+    top: -30px;
+    left: -20px;  
+  }
+}
+@keyframes fadeInToLeft_gold {
+  0% {
+    opacity: 0;
+    bottom: -100px;
+    right: -70px;
+  }
+  100% {
+    opacity: 1;
+    bottom: -70px;
+    right: -20px;
+  }
+}
+.magestic-gold-hero .leaf-top {
+  position: absolute;
+  top: 25%;
+  right: 50px;
+  transform: rotate(0deg);
+  opacity: 0;
+  z-index: 2;
+}
+.design-opened .magestic-gold-hero .leaf-top {
+  animation: fadeGoldLeafTop ease-in-out 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.magestic-gold-hero .leaf-bottom {
+  position: absolute;
+  bottom: 34%;
+  left: 30px;
+  transform: rotate(0deg);
+  opacity: 0;
+  z-index: 2;
+}
+.design-opened .magestic-gold-hero .leaf-bottom {
+  animation: fadeGoldLeafBottom ease-in-out 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.opacity--0 {
+  opacity: 0;
+}
+.design-image .main-content {
+  opacity: 0;
+}
+.design-opened .main-content {
+  animation: fadeIn ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;  
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeGoldLeafTop {
+  0% {
+    top: 20%;
+    transform: rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    top: 25%;
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+@keyframes fadeGoldLeafBottom {
+  0% {
+    bottom: 38%;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+  100% {
+    bottom: 34%;
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+.bg-magestic-gold {
+  background-image: url('https://ik.imagekit.io/kaddigital/magestic-gold-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.bg-magestic-gold::after {
+  content: "";
+  display: block;
+  top: 110px;
+  right: -30px;
+  width: 90px;
+  height: 125px;
+  background-image: url('https://ik.imagekit.io/kaddigital/gold-leafes.png');
+  transform: rotate(180deg);
+  background-size: cover;
+  z-index: 1;
+  position: absolute;
+  animation: animateGoldLeafesTop ease-in-out 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;  
+}
+.bg-magestic-gold::before {
+  content: "";
+  display: block;
+  bottom: 110px;
+  left: -30px;
+  width: 90px;
+  height: 125px;
+  background-image: url('https://ik.imagekit.io/kaddigital/gold-leafes.png');
+  background-size: cover;
+  z-index: 1;
+  position: absolute;
+  animation: animateGoldLeafesBottom ease-in-out 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;  
+}
+@keyframes animateGoldLeafesTop {
+  0% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(190deg);
+  }
+  0% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes animateGoldLeafesBottom {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  0% {
+    transform: rotate(0);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .magestic-gold-hero .flower-big-top {
+    width: 220px;
+  }
+  .magestic-gold-hero .flower-big-bottom {
+    width: 220px;
+  }
+}
+/* magestic gold */
+
+
+/* elegent */
+.elegent-hero {
+  background-color: #464568;
+
+}
+.elegent-hero .flower-top {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  opacity: 0;
+}
+.elegent-hero .flower-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+.design-opened .elegent-hero .flower-top {
+  animation: fadeInToRight_elegent ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  z-index: 2;
+  transform: scale(1);
+  opacity: 1;
+}
+.design-opened .elegent-hero .flower-bottom {
+  animation: fadeInToLeft_elegent ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  z-index: 2;
+  transform: scale(1);
+  opacity: 1;
+}
+@keyframes fadeInToRight_elegent {
+  0% {
+    opacity: 0;
+    top: -30px;
+    left: -30px;  
+  }
+  100% {
+    opacity: 1;
+    top: 20px;
+    left: 0px;  
+  }
+}
+@keyframes fadeInToLeft_elegent {
+  0% {
+    opacity: 0;
+    bottom: -30px;
+    right: -30px;  
+  }
+  100% {
+    opacity: 1;
+    bottom: 0px;
+    right: 0px;  
+  }
+}
+
+.elegent-hero .main-content {
+  color: white;
+  margin-top: -30px;
+}
+.bg-elegent {
+  color: white;
+  width: 100%;
+  background-color: #464568;
+  position: relative;
+}
+.bg-elegent::after {
+  content: "";
+  display: block;
+  top: 110px;
+  right: -60px;
+  width: 120px;
+  height: 150px;
+  background-image: url('https://ik.imagekit.io/kaddigital/elegent-leafes.png');
+  transform: rotate(-10deg);
+  background-size: cover;
+  z-index: 1;
+  position: absolute;
+}
+.bg-elegent::before {
+  content: "";
+  display: block;
+  bottom: 110px;
+  left: -60px;
+  width: 120px;
+  height: 150px;
+  background-image: url('https://ik.imagekit.io/kaddigital/elegent-leafes.png');
+  transform: rotate(170deg);
+  background-size: cover;
+  z-index: 1;
+  position: absolute;
+}
+@media only screen and (min-width: 768px) {
+  .elegent-hero .flower-top {
+    width: 180px;
+  }
+  .elegent-hero .flower-bottom {
+    width: 180px;
+  }
+}
+/* elegent */
+
+
+/* autumn */
+.bg-autumn {
+  background-image: url('https://ik.imagekit.io/kaddigital/autumn-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.bg-autumn::after {
+  content: "";
+  display: block;
+  top: 110px;
+  right: -40px;
+  width: 90px;
+  height: 125px;
+  background-image: url('https://ik.imagekit.io/kaddigital/autumn-leafes.png');
+  transform: rotate(-30deg);
+  background-size: cover;
+  z-index: 1;
+  position: absolute;
+}
+.bg-autumn::before {
+  content: "";
+  display: block;
+  bottom: 110px;
+  left: -40px;
+  width: 90px;
+  height: 125px;
+  background-image: url('https://ik.imagekit.io/kaddigital/autumn-leafes.png');
+  transform: rotate(150deg);
+  background-size: cover;
+  z-index: 1;
+  position: absolute;
+}
+.ocean-blue-hero {
+  position: relative;
+}
+.design-opened .autumn-hero .flower-top {
+  animation: fadeInTop ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  opacity: 1;
+}
+.autumn-hero .flower-top {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+  opacity: 0;
+}
+@keyframes fadeInTop {
+  0% {
+    top: -20px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+.design-opened .autumn-hero .flower-bottom {
+  animation: fadeInBottom ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  opacity: 1;
+}
+.autumn-hero .flower-bottom {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+  opacity: 0;
+}
+@keyframes fadeInBottom {
+  0% {
+    bottom: -20px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+.autumn-hero .leaf-top {
+  position: absolute;
+  top: 70px;
+  right: 30%;
+  opacity: 0;
+}
+.design-opened .autumn-hero .leaf-top {
+  animation: fadeAutumnLeafTop ease-in-out 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+.autumn-hero .leaf-bottom {
+  position: absolute;
+  top: 140px;
+  left: 30%;
+  opacity: 0;
+}
+.design-opened .autumn-hero .leaf-bottom {
+  animation: fadeAutumnLeafBottom ease-in-out 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.6s;
+}
+@keyframes fadeAutumnLeafTop {
+  0% {
+    top: 50px;
+    transform: rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    top: 70px;
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+@keyframes fadeAutumnLeafBottom {
+  0% {
+    top: 120px;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+  100% {
+    top: 140px;
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .autumn-hero .flower-top {
+    width: 100%;
+  }
+  .autumn-hero .flower-bottom {
+    width: 270px;
+  }
+  .autumn-hero .leaf-top {
+    top: 40px !important;
+    width: 60px;
+  }
+  .autumn-hero .leaf-bottom {
+    top: 100px !important;
+    width: 30px;
+  }
+}
+/* autumn */
+
+
+/* simply */
+.simply-hero .flower-top {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  opacity: 0;
+}
+.simply-hero .flower-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  opacity: 0;
+}
+.design-opened .simply-hero .flower-top {
+  animation: fadeInToRight_simply ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  z-index: 2;
+  transform: scale(1);
+  opacity: 1;
+}
+.design-opened .simply-hero .flower-bottom {
+  animation: fadeInToLeft_simply ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  z-index: 2;
+  transform: scale(1);
+  opacity: 1;
+}
+@keyframes fadeInToRight_simply {
+  0% {
+    opacity: 0;
+    top: -30px;
+    right: -30px;  
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+    right: 30px;  
+  }
+}
+@keyframes fadeInToLeft_simply {
+  0% {
+    opacity: 0;
+    bottom: -30px;
+    left: -30px;  
+  }
+  100% {
+    opacity: 1;
+    bottom: 0px;
+    left: 30px;  
+  }
+}
+.bg-simply {
+  background-image: url('https://ik.imagekit.io/kaddigital/simply-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+@media only screen and (min-width: 768px) {
+  .simply-hero .flower-top {
+    width: 80px;
+  }
+  .simply-hero .flower-bottom {
+    width: 80px;
+  }
+}
+/* simply */
+
+
+/* forest */
+.forest-hero .flower-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+.design-opened .forest-hero .flower-top {
+  animation: fadeInToRight_forest ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  z-index: 2;
+  transform: scale(1);
+  opacity: 1;
+}
+@keyframes fadeInToRight_forest {
+  0% {
+    opacity: 0;
+    top: -30px;
+    right: -30px;  
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+    right: 0px;  
+  }
+}
+.bg-forest {
+  background-image: url('https://ik.imagekit.io/kaddigital/forest-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+@media only screen and (min-width: 768px) {
+  .forest-hero .flower-top {
+    width: 240px;
+  }
+}
+/* forest */
+
+
+/* enchant */
+.enchant-hero .flower-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+.enchant-hero .flower-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+.design-opened .enchant-hero .flower-top {
+  animation: fadeInToBottom_enchant ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  z-index: 2;
+  transform: scale(1);
+  opacity: 1;
+}
+.design-opened .enchant-hero .flower-bottom {
+  animation: fadeInToTop_enchant ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  z-index: 2;
+  transform: scale(1);
+  opacity: 1;
+}
+@keyframes fadeInToBottom_enchant {
+  0% {
+    opacity: 0;
+    top: -30px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+@keyframes fadeInToTop_enchant {
+  0% {
+    opacity: 0;
+    bottom: -30px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0px;
+  }
+}
+.bg-enchant {
+  background-image: url('https://ik.imagekit.io/kaddigital/enchant-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+@media only screen and (min-width: 768px) {
+  .enchant-hero .flower-top {
+    width: 250px;
+  }
+  .enchant-hero .flower-bottom {
+    width: 250px;
+  }
+}
+/* enchant */
+
+
+/* woods */
+.bg-woods {
+  background-image: url('https://ik.imagekit.io/kaddigital/woods-bg.png');
+  background-size: 100%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.woods-hero .flower-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+.design-opened .woods-hero .flower-bottom {
+  animation: fadeInToTop_enchant ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  z-index: 2;
+  transform: scale(1);
+  opacity: 1;
+}
+@keyframes fadeInToTop_enchant {
+  0% {
+    opacity: 0;
+    bottom: -30px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0px;
+  }
+}
+.woods-hero .flower-left {
+  position: absolute;
+  top: 18%;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+.woods-hero .flower-right {
+  position: absolute;
+  top: 35%;
+  right: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+.design-opened .woods-hero .flower-left {
+  animation: fadeInToRight_woods ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  animation-delay: 0.5s;
+  z-index: 2;
+}
+.design-opened .woods-hero .flower-right {
+  animation: fadeInToLeft_woods ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  animation-delay: 0.5s;
+  z-index: 2;
+}
+@keyframes fadeInToRight_woods {
+  0% {
+    opacity: 0;
+    left: -30px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes fadeInToLeft_woods {
+  0% {
+    opacity: 0;
+    right: -30px;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .woods-hero .main-content {
+    transform: translateY(-60px);
+  }
+  .woods-hero .flower-left {
+    width: 80px;
+  }
+  .woods-hero .flower-right {
+    width: 50px;
+  }
+}
+/* woods */
+
+
+/* lavish */
+.lavish-hero {
+  background-color: #032A34;
+}
+.lavish-hero .flower-top {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+.lavish-hero .flower-bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+.design-opened .lavish-hero .flower-top {
+  animation: fadeInToBottom_lavish ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  z-index: 2;
+  transform: scale(1);
+  opacity: 1;
+}
+.design-opened .lavish-hero .flower-bottom {
+  animation: fadeInToTop_lavish ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  z-index: 2;
+  transform: scale(1);
+  opacity: 1;
+}
+@keyframes fadeInToBottom_lavish {
+  0% {
+    opacity: 0;
+    top: -40px;
+  }
+  100% {
+    opacity: 1;
+    top: 20px;
+  }
+}
+@keyframes fadeInToTop_lavish {
+  0% {
+    opacity: 0;
+    bottom: -40px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 20px;
+  }
+}
+.bg-lavish {
+  color: white;
+  background-image: url('https://ik.imagekit.io/kaddigital/lavish-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.lavish-hero .bride-content .main-title {
+  color: white;
+}
+.lavish-hero .bride-content .month,
+.lavish-hero .bride-content .year {
+  color: white;
+}
+@media only screen and (min-width: 768px) {
+  .lavish-hero .flower-top {
+    width: 90%;
+  }
+  .lavish-hero .flower-bottom {
+    width: 90%;
+  }
+}
+/* lavish */
+
+
+/* luxury */
+.bg-luxury {
+  color: white;
+  background-image: url('https://ik.imagekit.io/kaddigital/luxury-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.luxury-hero .flower-left {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+.luxury-hero .flower-right {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+.design-opened .luxury-hero .flower-left {
+  animation: fadeInToRight_luxury ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  z-index: 2;
+}
+.design-opened .luxury-hero .flower-right {
+  animation: fadeInToLeft_luxury ease-in-out 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  z-index: 2;
+}
+@keyframes fadeInToRight_luxury {
+  0% {
+    opacity: 0;
+    left: -30px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes fadeInToLeft_luxury {
+  0% {
+    opacity: 0;
+    right: -30px;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .luxury-hero .flower-left {
+    width: 150px;
+  }
+  .luxury-hero .flower-right {
+    width: 150px;
+  }
+}
+/* luxury */
