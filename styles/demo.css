@@ -1,5 +1,5 @@
 .design-wrapper {
-  width: 350px;
+  width: 350px !important;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   padding-bottom: 60px;
@@ -201,7 +201,7 @@
 
 @media only screen and (max-width: 500px) {
   .design-wrapper {
-    width: 100vw;
+    width: 100vw !important;
   }
   .design-image {
     width: 100vw;

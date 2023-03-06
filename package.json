@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@n8tb1t/use-scroll-position": "^2.0.3",
     "@reduxjs/toolkit": "^1.9.3",
     "@stripe/stripe-js": "^1.48.0",
     "antd": "^5.2.3",
@@ -19,6 +20,7 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.43.4",
     "react-redux": "^8.0.5",
+    "react-slick": "^0.29.0",
     "use-sound": "^4.0.1"
   }
 }

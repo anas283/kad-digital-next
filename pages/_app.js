@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import "../styles/custom.css";
 import "../styles/dashboard.css";
+import "../styles/demo.css";
+import "../styles/themes.css";
 import store from '../store/store';
 import { Provider } from 'react-redux';
 
