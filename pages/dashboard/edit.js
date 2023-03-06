@@ -1,23 +1,19 @@
-import Head from "next/head"
-import Dashboard from "./index"
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ChooseTheme from "../../components/ChooseTheme";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
-import { DatePicker, message, Switch, TimePicker } from "antd";
+import api from "../../api";
+import { DatePicker, TimePicker, Switch } from "antd";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import FeatherIcon from 'feather-icons-react/build/FeatherIcon'
-import { Button, Steps } from 'antd';
-import MockupImages from "../../components/MockupImages";
+import FeatherIcon from "feather-icons-react/build/FeatherIcon";
+import { Button, message, Steps } from 'antd';
 import { chooseSong, chooseTheme } from "../../store/themeReducer";
-import Music from "../../components/Music";
-
-import { loadStripe } from "@stripe/stripe-js"; 
 import MusicCard from "../../components/MusicCard";
-
-const stripe_pk = 'pk_test_51MYJjlI9XINpdSHTYrO86MSWwLEGZnMGDULi3C32Xd04hU3Jc9A0lqN7U6wDIqFd8D7WQPxYcul4t2Iy2nVS28mh00YWChYXTJ';
-// const stripe_pk = 'pk_live_51MYJjlI9XINpdSHTXIbbrmTa89kVkt41HsVoJcK6OelcOsqXNyho9k2FZLn1jqqHtGxmz2CDPMKCuokKbWL0Hq7T00eU4VnBDk';
+import Music from "../../components/Music";
+import { useRouter } from "next/router";
+import Dashboard from ".";
+import Head from "next/head";
 
 const steps = [
   {
@@ -33,21 +29,14 @@ const steps = [
     title: 'Add Ons',
   },
 ];
-const songs = Music();
 
 dayjs.extend(customParseFormat);
 
-const create = () => {
+const EditTheme = () => {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme.theme);
   const song = useSelector((state) => state.theme.song);
   const [userId, setUserId] = useState();
-
-  useEffect(() => {
-    if(typeof window !== "undefined") {
-      setUserId(localStorage.getItem('id'));
-    }
-  },[])
 
   const {
     handleSubmit,
@@ -57,6 +46,7 @@ const create = () => {
     setValue,
     trigger,
   } = useForm();
+  const router = useRouter();
   const { 
     fields: eventFields, 
     append: eventAppend, 
@@ -73,14 +63,130 @@ const create = () => {
   );
 
   const format = "HH:mm";
+  const [weddingDate, setWeddingDate] = useState('');
+  const [weddingStartTime, setWeddingStartTime] = useState('');
+  const [weddingEndTime, setWeddingEndTime] = useState('');
+  const [timeArray, setTimeArray] = useState([]);
+  const [cardId, setCardId] = useState(0);
+  const [totalView, setTotalView] = useState(0);
+  const songData = Music();
 
-  // const songData = Music();
-  const songData = [];
-  
   useEffect(() => {
-    dispatch(chooseTheme(MockupImages[0].image))
-    dispatch(chooseSong(songs[0].url))
-  },[dispatch])
+    if(typeof window !== "undefined") {
+      setUserId(localStorage.getItem('id'));
+    }
+  },[])
+
+  const insertCardData = useCallback((data) => {
+    dispatch(chooseTheme(data.theme));
+
+    setCardId(data.id);
+
+    setTotalView(data.total_view);
+    setValue('men_short_name', data.men_short_name);
+    setValue('men_long_name', data.men_long_name);
+    setValue('women_short_name', data.women_short_name);
+    setValue('women_long_name', data.women_long_name);
+
+    setValue('father_full_name', data.father_full_name);
+    setValue('mother_full_name', data.mother_full_name);
+
+    let contacts = data.contacts;
+    if(contacts) {
+      if(typeof data.contacts === 'string') {
+        contacts = JSON.parse(contacts);
+
+        for (let i = 0; i < contacts.length; i++) {
+          contactAppend({ 
+            name: contacts[i].name, 
+            phone_number: contacts[i].phone_number, 
+            info: contacts[i].info, 
+          })
+        }
+      } else {
+        for (let i = 0; i < contacts.length; i++) {
+          contactAppend({ 
+            name: contacts[i].name, 
+            phone_number: contacts[i].phone_number, 
+            info: contacts[i].info, 
+          })
+        }
+      }
+    }
+
+    setValue('wedding_date', dayjs(data.wedding_date));
+    setValue('wedding_start_time', dayjs(data.wedding_start_time));
+    setValue('wedding_end_time', dayjs(data.wedding_end_time));
+
+    setWeddingDate(data.wedding_date);
+    setWeddingStartTime(data.wedding_start_time);
+    setWeddingEndTime(data.wedding_end_time);
+    
+    setValue('wedding_address', data.wedding_address);
+    setValue('wedding_address_name', data.wedding_address_name);
+    setValue('google_maps_url', data.google_maps_url);
+    setValue('waze_url', data.waze_url);
+    setValue('dress_code', data.dress_code);
+    setValue('music_url', data.music_url);
+    setValue('is_music', data.is_music);
+    dispatch(chooseSong(data.music_url));
+
+    const newTime = [];
+
+    let events = data.events;
+    if(events) {
+      if(typeof data.events === 'string') {
+        events = JSON.parse(events);
+
+        for (let i = 0; i < events.length; i++) {
+          const date = new Date(events[i].time)
+          const hours = date.getHours();
+          const minutes = date.getMinutes();
+          const seconds = date.getSeconds();
+          const time = hours + ':' + minutes + ':' + seconds;
+
+          eventAppend({ 
+            name: events[i].name, 
+            time: events[i].time 
+          })
+          newTime.push(time)
+        }
+      } else {
+        for (let i = 0; i < events.length; i++) {
+          const date = new Date(events[i].time)
+          const hours = date.getHours();
+          const minutes = date.getMinutes();
+          const seconds = date.getSeconds();
+          const time = hours + ':' + minutes + ':' + seconds;
+
+          eventAppend({ 
+            name: events[i].name, 
+            time: events[i].time 
+          })
+          newTime.push(time)
+        }
+      }
+    }
+
+    setTimeArray(newTime)
+  },[contactAppend,dispatch,eventAppend,setValue])
+
+  useEffect(() => {
+    const getCards = async () => {
+      try {
+        await api.post('/api/card/get/' + userId).then((res) => {
+          if(res.data.status === 'success') {
+            insertCardData(res.data.data);
+          }
+        })
+      } catch (e) {
+        if(e.response) {
+          console.log(e.response.data.message);
+        }
+      }
+    }
+    getCards();
+  },[insertCardData, userId])
 
   useEffect(() => {
     setValue("theme", theme);
@@ -89,85 +195,32 @@ const create = () => {
     }
   }, [setValue, trigger, theme]);
 
-  const product = { 
-    name: "Kad Digital Premium", 
-    price: 55, 
-    productOwner: "Kad Digital", 
-    description: 
-      "Kad Kahwin Digital untuk memudahkan tetamu ke majlis perkahwinan anda.", 
-    quantity: 1, 
-  }; 
-
   const onSubmit = async (body) => {
-    body.total_view = 0;
-    body.music_url = song;
     body.uid = userId;
+    body.total_view = totalView;    
+    body.music_url = song;
 
-    localStorage.setItem('create_data', JSON.stringify(body));
-
-    if(
-      body.father_full_name !== '' &&
-      body.google_maps_url !== '' &&
-      body.men_long_name !== '' &&
-      body.men_short_name !== '' &&
-      body.mother_full_name !== '' &&
-      body.waze_url !== '' &&
-      body.wedding_address !== '' &&
-      body.wedding_address_name !== '' &&
-      body.wedding_date !== '' &&
-      body.wedding_end_time !== '' &&
-      body.wedding_start_time !== '' &&
-      body.wedding_title !== '' &&
-      body.women_long_name !== '' &&
-      body.women_short_name !== ''
-    ) {
-      console.log(product);
-      makePayment();
-    }
-    else {
-      message.error('Please fill in required fields!')
+    console.log(body);
+    try {
+      await api
+        .put("/api/card/update/" + cardId,
+          body
+        )
+        .then((res) => {
+          if (res.data.status === "success") {
+            router.push("/dashboard/cards");
+            message.success("Card updated succesfully")
+          }
+        });
+    } catch (e) {
+      if (e.response) {
+        message.error('Please fill in the required field!')
+      }
     }
   };
 
-  const makePayment = async () => { 
-    const stripe = await loadStripe(stripe_pk); 
-    const body = { product }; 
-    const headers = { 
-      "Content-Type": "application/json", 
-    }; 
-
-    let api_url = "";
-    const url = window.location.origin;
-
-    if(url === 'http://localhost:3000') {
-      api_url = "http://localhost:8080";
-    } else {
-      api_url = "https://kad-digital.up.railway.app";
-    }
-
-    const response = await fetch( 
-      api_url + "/api/create-checkout-session", 
-      { 
-        method: "POST", 
-        headers: headers, 
-        body: JSON.stringify(body), 
-      } 
-    ); 
- 
-    const session = await response.json(); 
- 
-    const result = stripe.redirectToCheckout({ 
-      sessionId: session.id, 
-    }); 
- 
-    if (result.error) { 
-      console.log(result.error); 
-    } 
-  }; 
-
   const triggerValidation = async () => {
-    const result = await trigger();
-    console.log(result);
+    await trigger();
   }
 
   const [current, setCurrent] = useState(0);
@@ -184,7 +237,7 @@ const create = () => {
   }));
 
   const meta = {
-    title: "Create Card",
+    title: "Edit Card",
     description: "Craft beautiful wedding cards that ensure your guests don't miss out on the special event!",
     type: "website",
   }
@@ -202,8 +255,8 @@ const create = () => {
           <h5 className="page-title">Create Card</h5>
         </div>
         <div className="mt-2">
-          <div className="card p-4 border-0">
-            <form>
+          <div className="card p-4">
+            <form onSubmit={handleSubmit(onSubmit)}>
               {/* {error && <div className="alert alert-danger">{error}</div>} */}
 
               <Steps current={current} items={items} />
@@ -368,7 +421,7 @@ const create = () => {
                       </div>
                     </div>
                   </div>
-
+                          
                   <div className="separator"></div>
                   <h5>Hubungi</h5>
                   <div>
@@ -452,6 +505,7 @@ const create = () => {
                                     ? "input-ant mt-1 border-danger"
                                     : "input-ant mt-1"
                                 }
+                                defaultValue={dayjs(weddingDate)}
                               />
                             )}
                           />
@@ -478,6 +532,7 @@ const create = () => {
                                   }
                                   format={format}
                                   placeholder="Mula"
+                                  defaultValue={dayjs(weddingStartTime)}
                                 />
                               )}
                             />
@@ -500,6 +555,7 @@ const create = () => {
                                   }
                                   format={format}
                                   placeholder="Tamat"
+                                  defaultValue={dayjs(weddingEndTime)}
                                 />
                               )}
                             />
@@ -658,6 +714,7 @@ const create = () => {
                                 onChange={onChange}
                                 className="input-ant mt-1"
                                 format={format}
+                                defaultValue={dayjs(timeArray[index], 'HH:mm:ss')}
                               />
                             )}
                           />
@@ -715,7 +772,7 @@ const create = () => {
                         )}
                       />
                     </div>
-                  </div>
+                  </div>   
                   <div className="row pb-4 mt-2">
                     {songData.map((song, key) => {
                       return (
@@ -727,7 +784,7 @@ const create = () => {
                         </div>
                       )
                     })}
-                  </div>
+                  </div>              
                 </div>
               }
 
@@ -743,7 +800,7 @@ const create = () => {
                 )}
                 {current === steps.length - 1 && (
                   <Button type="primary" onClick={handleSubmit(onSubmit)}>
-                    Pay Now - RM55
+                    Submit
                   </Button>
                 )}
                 {current > 0 && (
@@ -763,7 +820,7 @@ const create = () => {
         </div>
       </div>
     </Dashboard>
-  )
-}
+  );
+};
 
-export default create;
+export default EditTheme;

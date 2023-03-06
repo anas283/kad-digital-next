@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 import api from '../../api';
 import { useSelector } from "react-redux";
 import useSound from 'use-sound';
-// import Music from "../assets/Music";
+import Music from "../../components/Music";
 import MockupImages from "../../components/MockupImages";
 
 import Autumn from "../../themes/Autumn";
@@ -19,7 +19,7 @@ import Simply from "../../themes/Simply";
 import Woods from "../../themes/Woods";
 import { useEffect, useState } from "react";
 
-// const songs = Music();
+const songs = Music();
 
 const WeddingCard = () => {
   const router = useRouter();
@@ -33,12 +33,12 @@ const WeddingCard = () => {
   const [themeName, setThemeName] = useState('');
   const [isMusic, setIsMusic] = useState(0);
 
-  // const [playSound1, sound1] = useSound(songs[0].url);
-  // const [playSound2, sound2] = useSound(songs[1].url);
-  // const [playSound3, sound3] = useSound(songs[2].url);
-  // const [playSound4, sound4] = useSound(songs[3].url);
-  // const [playSound5, sound5] = useSound(songs[4].url);
-  // const [playSound6, sound6] = useSound(songs[5].url);
+  const [playSound1, sound1] = useSound(songs[0].url);
+  const [playSound2, sound2] = useSound(songs[1].url);
+  const [playSound3, sound3] = useSound(songs[2].url);
+  const [playSound4, sound4] = useSound(songs[3].url);
+  const [playSound5, sound5] = useSound(songs[4].url);
+  const [playSound6, sound6] = useSound(songs[5].url);
 
   useEffect(() => {
     let names;
@@ -99,73 +99,73 @@ const WeddingCard = () => {
     }
   },[name])
 
-  // useEffect(() => {
-  //   if(isCardOpen) {
-  //     setTimeout(() => {
-  //       startPlayingSong();
-  //     }, 2000);
-  //   }
-  // },[isCardOpen])
+  useEffect(() => {
+    if(isCardOpen) {
+      setTimeout(() => {
+        startPlayingSong();
+      }, 2000);
+    }
+  },[isCardOpen])
 
-  // useEffect(() => {
-  //   if(isPause) {
-  //     stopPlayingSong();
-  //   } else {
-  //     startPlayingSong();
-  //   }
-  // },[isPause])
+  useEffect(() => {
+    if(isPause) {
+      stopPlayingSong();
+    } else {
+      startPlayingSong();
+    }
+  },[isPause])
 
-  // const startPlayingSong = () => {
-  //   if(!isLive) {
-  //     playSound1();
-  //   } else {
-  //     if(!isPause && isMusic === 1) {
-  //       if(songs[0].url === musicUrl) {
-  //         playSound1();
-  //       }
-  //       else if(songs[1].url === musicUrl) {
-  //         playSound2();
-  //       }
-  //       else if(songs[2].url === musicUrl) {
-  //         playSound3();
-  //       }
-  //       else if(songs[3].url === musicUrl) {
-  //         playSound4();
-  //       }
-  //       else if(songs[4].url === musicUrl) {
-  //         playSound5();
-  //       }
-  //       else if(songs[4].url === musicUrl) {
-  //         playSound6();
-  //       }
-  //     }
-  //   }
-  // }
+  const startPlayingSong = () => {
+    if(!isLive) {
+      playSound1();
+    } else {
+      if(!isPause && isMusic === 1) {
+        if(songs[0].url === musicUrl) {
+          playSound1();
+        }
+        else if(songs[1].url === musicUrl) {
+          playSound2();
+        }
+        else if(songs[2].url === musicUrl) {
+          playSound3();
+        }
+        else if(songs[3].url === musicUrl) {
+          playSound4();
+        }
+        else if(songs[4].url === musicUrl) {
+          playSound5();
+        }
+        else if(songs[4].url === musicUrl) {
+          playSound6();
+        }
+      }
+    }
+  }
 
-  // const stopPlayingSong = () => {
-  //   if(!isLive) {
-  //     sound1.pause();
-  //   } else {
-  //     if(songs[0].url === musicUrl) {
-  //       sound1.pause();
-  //     }
-  //     else if(songs[1].url === musicUrl) {
-  //       sound2.pause();
-  //     }
-  //     else if(songs[2].url === musicUrl) {
-  //       sound3.pause();
-  //     }
-  //     else if(songs[3].url === musicUrl) {
-  //       sound4.pause();
-  //     }
-  //     else if(songs[4].url === musicUrl) {
-  //       sound5.pause();
-  //     }
-  //     else if(songs[5].url === musicUrl) {
-  //       sound6.pause();
-  //     }
-  //   }
-  // }
+  const stopPlayingSong = () => {
+    if(!isLive) {
+      sound1.pause();
+    } else {
+      if(songs[0].url === musicUrl) {
+        sound1.pause();
+      }
+      else if(songs[1].url === musicUrl) {
+        sound2.pause();
+      }
+      else if(songs[2].url === musicUrl) {
+        sound3.pause();
+      }
+      else if(songs[3].url === musicUrl) {
+        sound4.pause();
+      }
+      else if(songs[4].url === musicUrl) {
+        sound5.pause();
+      }
+      else if(songs[5].url === musicUrl) {
+        sound6.pause();
+      }
+    }
+  }
 
   const updateTotalView = async (total_view, men_short_name, women_short_name) => {
     try {

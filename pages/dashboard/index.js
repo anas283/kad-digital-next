@@ -38,7 +38,7 @@ const Dashboard = ({children}) => {
                 </Link>
                 <Link 
                   href="/dashboard/cards"
-                  className={router.pathname == "/dashboard/cards" ? "option active" : "option"}
+                  className={(router.pathname == "/dashboard/cards" || router.pathname == "/dashboard/create" || router.pathname == "/dashboard/edit") ? "option active" : "option"}
                   >
                   <FeatherIcon icon="layers" size={20} />
                   <h6 className="option-name">Card</h6>
