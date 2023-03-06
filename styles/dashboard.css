@@ -341,9 +341,9 @@
 }
 
 .btn-hide {
-  display: flex;
-  flex-direction: row;
-  padding: 5px 10px 0 10px;
+  display: flex !important;
+  flex-direction: row !important;
+  padding: 5px 10px 0 10px !important;
 }
 .btn-hide h6 {
   font-size: 14px;

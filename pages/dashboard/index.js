@@ -1,16 +1,18 @@
 import FeatherIcon from 'feather-icons-react/build/FeatherIcon'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 
 const Dashboard = ({children}) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [name, setName] = useState(false);
   const router = useRouter();
-  
-  let name;
-  if(typeof window !== "undefined") {
-    name = JSON.parse(localStorage.getItem('name'));
-  }
+
+  useEffect(() => {
+    if(typeof window !== "undefined") {
+      setName(JSON.parse(localStorage.getItem('name')))
+    }
+  },[name])
 
   const logout = () => {
     localStorage.clear();
