@@ -11,8 +11,8 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     require('bootstrap/dist/css/bootstrap.css');
     require('bootstrap/dist/js/bootstrap.bundle.min');
-    // require('slick-carousel/slick/slick.css');
-    // require('slick-carousel/slick/slick-theme.css');
+    require('slick-carousel/slick/slick.css');
+    require('slick-carousel/slick/slick-theme.css');
   },[])
 
   return (

@@ -72,7 +72,7 @@ const GuestBook = ({ data }) => {
           </Slider>
         </div>
       }
-      {(wishes.length === 0 && name === 'demo') &&
+      {wishes.length === 0 &&
         <div className="guest-book pt-5"
           data-aos="fade-up"
           data-aos-duration="1000"
