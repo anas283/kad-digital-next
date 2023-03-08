@@ -2,6 +2,7 @@ import FeatherIcon from 'feather-icons-react/build/FeatherIcon'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
 
 const Dashboard = ({children}) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +17,7 @@ const Dashboard = ({children}) => {
 
   const logout = () => {
     localStorage.clear();
+    Cookies.remove("token");
   }
 
   return (

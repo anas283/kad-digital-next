@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Head from "next/head";
+import Cookies from "js-cookie";
 
 const Login = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
@@ -18,12 +19,13 @@ const Login = () => {
       })
       .then((res) => {
         if(res.data.status === 'success') {
-          localStorage.setItem('token', res.data.data.token);
+          // localStorage.setItem('token', res.data.data.token);
           let user = res.data.data;
           localStorage.setItem('id', user.id);
           let name = user.firstname + ' ' + user.lastname;
           localStorage.setItem('name', JSON.stringify(name));
           router.push('/dashboard/overview');
+          Cookies.set("token", res.data.data.token);
         }
       })
     } catch (e) {

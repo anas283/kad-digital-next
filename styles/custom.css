@@ -116,6 +116,10 @@ nav .logo {
   align-items: center;
 }
 
+.btn-light {
+  border: 1px solid #ced4da !important;
+}
+
 .how-section .item {
   position: relative;
   padding-left: 40px !important;

@@ -8,7 +8,6 @@ const Mockup = (data) => {
 
   useEffect(() => {
     if(typeof window !== "undefined") {
-      console.log(window.location.origin);
       setUrl(window.location.origin)
     }
   },[])
