@@ -6,6 +6,7 @@ import Link from "next/link";
 import api from '../../api';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import MockupImages from "../../components/MockupImages";
+import { message } from "antd";
 
 const cards = () => {
   const [cards, setCards] = useState([]);

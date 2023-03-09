@@ -16,8 +16,8 @@ import Music from "../../components/Music";
 import { loadStripe } from "@stripe/stripe-js"; 
 import MusicCard from "../../components/MusicCard";
 
-const stripe_pk = 'pk_test_51MYJjlI9XINpdSHTYrO86MSWwLEGZnMGDULi3C32Xd04hU3Jc9A0lqN7U6wDIqFd8D7WQPxYcul4t2Iy2nVS28mh00YWChYXTJ';
-// const stripe_pk = 'pk_live_51MYJjlI9XINpdSHTXIbbrmTa89kVkt41HsVoJcK6OelcOsqXNyho9k2FZLn1jqqHtGxmz2CDPMKCuokKbWL0Hq7T00eU4VnBDk';
+// const stripe_pk = 'pk_test_51MYJjlI9XINpdSHTYrO86MSWwLEGZnMGDULi3C32Xd04hU3Jc9A0lqN7U6wDIqFd8D7WQPxYcul4t2Iy2nVS28mh00YWChYXTJ';
+const stripe_pk = 'pk_live_51MYJjlI9XINpdSHTXIbbrmTa89kVkt41HsVoJcK6OelcOsqXNyho9k2FZLn1jqqHtGxmz2CDPMKCuokKbWL0Hq7T00eU4VnBDk';
 
 const steps = [
   {
