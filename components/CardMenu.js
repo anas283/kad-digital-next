@@ -20,6 +20,8 @@ const CardMenu = ({ data }) => {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
+    console.log(GoogleMaps.src);
+
     if(data) {
       if(typeof data.contacts === 'string') {
         setContacts(JSON.parse(data.contacts));
@@ -126,7 +128,7 @@ const CardMenu = ({ data }) => {
               <div className='menu-content'>
                 <div className='menu-item d-flex justify-content-between'>
                   <div className='d-flex flex-row'>
-                    <img className='menu-logo' src={GoogleMaps} alt="google-maps" />
+                    <img className='menu-logo' src={GoogleMaps.src} alt="google-maps" />
                     <div className='d-flex align-items-center ms-3'>
                       <h6 className='menu-name mt-2'>Google Maps</h6>
                     </div>
@@ -144,7 +146,7 @@ const CardMenu = ({ data }) => {
                 </div>
                 <div className='menu-item d-flex justify-content-between mt-2'>
                   <div className='d-flex flex-row'>
-                    <img className='menu-logo' src={Waze} alt="waze" />
+                    <img className='menu-logo' src={Waze.src} alt="waze" />
                     <div className='d-flex align-items-center ms-3'>
                       <h6 className='menu-name mt-2'>Waze</h6>
                     </div>
