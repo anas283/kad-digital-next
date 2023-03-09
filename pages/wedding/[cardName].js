@@ -19,6 +19,9 @@ import Simply from "../../themes/Simply";
 import Woods from "../../themes/Woods";
 import { useEffect, useState } from "react";
 import { useRef } from 'react';
+import GetDayNumber from "../../helpers/GetDayNumber";
+import GetMonth from "../../helpers/GetMonth";
+import GetYear from "../../helpers/GetYear";
 
 const songs = Music();
 
@@ -159,18 +162,34 @@ const WeddingCard = () => {
 
   const meta = {
     title: "Walimatul Urus - Kamal & Diana",
-    description: "Bertempat di Villamay Shah Alam pada 15 April 2023",
+    description: "Villamay Shah Alam pada 15 April 2023",
     type: "website",
   }
 
+  useEffect(() => {
+    console.log('data');
+    console.log(data);
+    console.log(name);
+  },[data])
+
   return (
     <>
-      <Head>
-        <title>{ meta.title }</title>
-        <meta name="description" content={ meta.description } />
-        <meta property="og:title" content={ meta.title } />
-        <meta property="og:description" content={ meta.description } />
-      </Head>
+      {(data.length !== 0 && name !== 'demo') &&
+        <Head>
+          <title>{ 'Walimatul Urus - ' + data.men_short_name + ' & ' + data.women_short_name }</title>
+          <meta name="description" content={ data.wedding_address_name + ' pada ' + GetDayNumber(data.wedding_date) + ' ' + GetMonth(data.wedding_date) + ' ' + GetYear(data.wedding_date) } />
+          <meta property="og:title" content={ 'Walimatul Urus - ' + data.men_short_name + ' & ' + data.women_short_name } />
+          <meta property="og:description" content={ data.wedding_address_name + ' pada ' + GetDayNumber(data.wedding_date) + ' ' + GetMonth(data.wedding_date) + ' ' + GetYear(data.wedding_date) } />
+        </Head>
+      }
+      {name === 'demo' &&
+        <Head>
+          <title>{ meta.title }</title>
+          <meta name="description" content={ meta.description } />
+          <meta property="og:title" content={ meta.title } />
+          <meta property="og:description" content={ meta.description } />
+        </Head>
+      }
       <audio ref={audioRef} src={musicUrl} />
       {themeName === 'autumn' &&
         <Autumn

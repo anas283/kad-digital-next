@@ -1,4 +1,4 @@
-export default function GetDayNumber(date) {
+export default function GetDay(date) {
   if(date) {
     const weekday = ["Ahad","Isnin","Selasa","Rabu","Khamis","Jumaat","Sabtu"];
     const d = new Date(date);
