@@ -44,9 +44,6 @@ const WeddingCard = () => {
       men_short_name = names[0];
       women_short_name = names[1];
 
-      console.log('name');
-      console.log(name);
-
       if(name !== 'demo') {
         const getCardsById = async () => {
           const body = {

@@ -20,8 +20,6 @@ const CardMenu = ({ data }) => {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    console.log(GoogleMaps.src);
-
     if(data) {
       if(typeof data.contacts === 'string') {
         setContacts(JSON.parse(data.contacts));
