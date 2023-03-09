@@ -5,6 +5,7 @@ import "../styles/demo.css";
 import "../styles/themes.css";
 import store from '../store/store';
 import { Provider } from 'react-redux';
+import { Analytics } from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }) {
 
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Provider store={store}>
         <Component {...pageProps} />
+        <Analytics />
       </Provider>
     </>
   );
