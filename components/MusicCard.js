@@ -2,17 +2,34 @@ import FeatherIcon from 'feather-icons-react/build/FeatherIcon';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { chooseSong } from '../store/themeReducer';
-import useSound from 'use-sound';
+import { useRef } from 'react';
 
 const MusicCard = ({ title, url }) => {
   const dispatch = useDispatch();
   const song = useSelector((state) => state.theme.song);
-  const [play, { stop }] = useSound(url);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const choose = (e) => {
     e.preventDefault()
     dispatch(chooseSong(url))
+  }
+
+  const audioRef = useRef();
+
+  const play = () => {
+    if (audioRef.current) {
+      audioRef.current.play()
+    } else {
+      // Throw error
+    }
+  }
+
+  const stop = () => {
+    if (audioRef.current) {
+      audioRef.current.pause()
+    } else {
+      // Throw error
+    }
   }
 
   const playMusic = () => {
@@ -37,6 +54,7 @@ const MusicCard = ({ title, url }) => {
         { title }
       </h6>
       <div className="mt-2">
+        <audio ref={audioRef} src={url} />
         <button type="button" className="btn btn-light me-2" onClick={playMusic}>
           { !isPlaying &&
             <FeatherIcon icon="play-circle" size={18} />

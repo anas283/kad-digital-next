@@ -25,8 +25,11 @@ const overview = () => {
           if(res.data.status === 'success') {
             setCard(res.data.data);
             // setCardId(res.data.data.id)
-            getAttendance(res.data.data.id);
-            localStorage.setItem('card_id', res.data.data.id)
+
+            if(res.data.data.id !== undefined) {
+              getAttendance(res.data.data.id);
+              localStorage.setItem('card_id', res.data.data.id)
+            }
           }
         })
       } catch (e) {

@@ -18,7 +18,6 @@ const Success = () => {
         .then((res) => {
           if (res.data.status === "success") {
             console.log('card created!');
-            message.success("Card created succesfully")
             localStorage.removeItem('create_data');
           }
         });
@@ -29,6 +28,10 @@ const Success = () => {
       }
     }
   })
+
+  const back = () => {
+    message.success("Card created succesfully")
+  }
 
   return (
     <>
@@ -43,7 +46,7 @@ const Success = () => {
               Your payment has been processed.
             </h6>
             <div className='d-flex justify-content-center mt-3'>
-              <Link href="/dashboard/cards" className='btn btn-dark'>Back</Link>
+              <Link href="/dashboard/cards" className='btn btn-dark' onClick={back}>Back</Link>
             </div>
           </div> 
         </div>

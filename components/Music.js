@@ -1,36 +1,55 @@
-const music1 = require('../public/songs/James_Arthur_Say_You_Wont_Let_Go.mp3');
-const music2 = require('../public/songs/Shane_Filan_Beautiful_In_White.mp3');
-const music3 = require('../public/songs/Calum_Scott_You_Are_The_Reason.mp3');
-const music4 = require('../public/songs/Ippo_Hafiz_Saat_Bahagia.mp3');
-const music5 = require('../public/songs/Hael_Husaini_Hari_Ini.mp3');
-const music6 = require('../public/songs/Virgoun_Bukti.mp3');
-
 export default function Music() {
   const musics = [
     {
       title: "Say You Won't Let Go - James Arthur",
-      url: music1
+      url: "https://firebasestorage.googleapis.com/v0/b/kad-digital-73037.appspot.com/o/music%2FJames%20Arthur%20-%20Say%20You%20Wont%20Let%20Go.mp3?alt=media&token=404fd9d8-5d81-4c15-a74f-f1beb68081ac"
     },
     {
       title: "Shane Filan - Beautiful In White",
-      url: music2
+      url: "https://od.lk/s/MjVfNTgxMDI5MjFf/Shane%20Filan%20-%20Beautiful%20In%20White.mp3"
     },
     {
       title: "Calum Scott - You Are The Reason",
-      url: music3
+      url: "https://od.lk/s/MjVfNTgxMDI3OTFf/Calum%20Scott%20-%20You%20Are%20The%20Reason.mp3"
     },
     {
       title: "Ippo Hafiz - Saat Bahagia",
-      url: music4
+      url: "https://od.lk/s/MjVfNTgxMDI5MDNf/Ippo%20Hafiz%20-%20Saat%20Bahagia.mp3"
     },
     {
-      title: "Hael Husaini - Hari Ini.mp3",
-      url: music5
+      title: "Hael Husaini - Hari Ini",
+      url: "https://od.lk/s/MjVfNTgxMDI4MzNf/Hael%20Husaini%20-%20Hari%20Ini.mp3"
     },
     {
       title: "Virgoun - Bukti",
-      url: music6
+      url: "https://od.lk/s/MjVfNTgxMDI5NzFf/Virgoun%20-%20Bukti.mp3"
     }
+
+    // {
+    //   title: "Say You Won't Let Go - James Arthur",
+    //   url: "https://od.lk/s/MjVfNTgxMDI5MDdf/James%20Arthur%20-%20Say%20You%20Wont%20Let%20Go.mp3"
+    // },
+    // {
+    //   title: "Shane Filan - Beautiful In White",
+    //   url: "https://od.lk/s/MjVfNTgxMDI5MjFf/Shane%20Filan%20-%20Beautiful%20In%20White.mp3"
+    // },
+    // {
+    //   title: "Calum Scott - You Are The Reason",
+    //   url: "https://od.lk/s/MjVfNTgxMDI3OTFf/Calum%20Scott%20-%20You%20Are%20The%20Reason.mp3"
+    // },
+    // {
+    //   title: "Ippo Hafiz - Saat Bahagia",
+    //   url: "https://od.lk/s/MjVfNTgxMDI5MDNf/Ippo%20Hafiz%20-%20Saat%20Bahagia.mp3"
+    // },
+    // {
+    //   title: "Hael Husaini - Hari Ini",
+    //   url: "https://od.lk/s/MjVfNTgxMDI4MzNf/Hael%20Husaini%20-%20Hari%20Ini.mp3"
+    // },
+    // {
+    //   title: "Virgoun - Bukti",
+    //   url: "https://od.lk/s/MjVfNTgxMDI5NzFf/Virgoun%20-%20Bukti.mp3"
+    // }
+
     // {
     //   title: "Say You Won't Let Go - James Arthur",
     //   url: "https://storage.cloud.google.com/kad-digital/James%20Arthur%20-%20Say%20You%20Won't%20Let%20Go.mp3"

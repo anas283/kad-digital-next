@@ -25,23 +25,25 @@ const cards = () => {
       try {
         api.post('/api/card/get/' + userId).then((res) => {
           if(res.data.status === 'success') {
-            let data = [];
-            data.push(res.data.data);
-            setCards(data);
-  
-            const cardData = res.data.data;
-            for(let i=0; i<MockupImages.length; i++) {
-              if(cardData.theme === MockupImages[i].image) {
-                setThemeName(MockupImages[i].name);
+            if(res.data.data.length !== 0) {
+              let data = [];
+              data.push(res.data.data);
+              setCards(data);
+    
+              const cardData = res.data.data;
+              for(let i=0; i<MockupImages.length; i++) {
+                if(cardData.theme === MockupImages[i].image) {
+                  setThemeName(MockupImages[i].name);
+                }
               }
+    
+              const _data = res.data.data;
+              const men = _data.men_short_name.toLowerCase();
+              const women = _data.women_short_name.toLowerCase();
+              const url = window.location.host + '/wedding/' + men + '-' + women;
+              setCardRoute('/wedding/' + men + '-' + women);
+              setCopyText(url);
             }
-  
-            const _data = res.data.data;
-            const men = _data.men_short_name.toLowerCase();
-            const women = _data.women_short_name.toLowerCase();
-            const url = window.location.host + '/wedding/' + men + '-' + women;
-            setCardRoute('/wedding/' + men + '-' + women);
-            setCopyText(url);
           }
         })
       } catch (e) {

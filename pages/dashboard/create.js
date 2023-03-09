@@ -74,8 +74,7 @@ const create = () => {
 
   const format = "HH:mm";
 
-  // const songData = Music();
-  const songData = [];
+  const songData = Music();
   
   useEffect(() => {
     dispatch(chooseTheme(MockupImages[0].image))
@@ -121,7 +120,7 @@ const create = () => {
       body.women_long_name !== '' &&
       body.women_short_name !== ''
     ) {
-      console.log(product);
+      console.log(body);
       makePayment();
     }
     else {
