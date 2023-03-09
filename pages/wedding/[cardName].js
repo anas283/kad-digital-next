@@ -166,12 +166,6 @@ const WeddingCard = () => {
     type: "website",
   }
 
-  useEffect(() => {
-    console.log('data');
-    console.log(data);
-    console.log(name);
-  },[data])
-
   return (
     <>
       {(data.length !== 0 && name !== 'demo') &&

@@ -54,7 +54,7 @@ const GuestBook = ({ data }) => {
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
           >
-          <h5 className="title-bold text-center fw-600">Ucapan { wishes.length }</h5>
+          <h5 className="title-bold text-center fw-600">Ucapan</h5>
     
           <Slider {...settings} className="guest-book-swiper">
             {wishes.map((wish,key) => {
@@ -72,13 +72,13 @@ const GuestBook = ({ data }) => {
           </Slider>
         </div>
       }
-      {(wishes.length === 0 && name === 'demo') &&
+      {!data &&
         <div className="guest-book pt-5"
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
           >
-          <h5 className="title-bold text-center fw-600">Ucapan { wishes.length }</h5>
+          <h5 className="title-bold text-center fw-600">Ucapan</h5>
     
           <Slider {...settings} className="guest-book-swiper">
             <div className="wish-content d-flex justify-content-center align-items-center">

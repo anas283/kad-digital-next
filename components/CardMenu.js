@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react'
 import FeatherIcon from 'feather-icons-react/build/FeatherIcon'
 import { Drawer } from 'antd'
-import GoogleMaps from '../public/google-maps.png';
-import GoogleCalendar from '../public/google-calendar.png';
-import Waze from "../public/waze.png";
 // import SampleQR from "../images/sample-qr.png";
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import { useDispatch, useSelector } from 'react-redux';
@@ -126,7 +123,7 @@ const CardMenu = ({ data }) => {
               <div className='menu-content'>
                 <div className='menu-item d-flex justify-content-between'>
                   <div className='d-flex flex-row'>
-                    <img className='menu-logo' src={GoogleMaps.src} alt="google-maps" />
+                    <img className='menu-logo' src="https://ik.imagekit.io/kaddigital/google-maps.png" alt="google-maps" />
                     <div className='d-flex align-items-center ms-3'>
                       <h6 className='menu-name mt-2'>Google Maps</h6>
                     </div>
@@ -144,7 +141,7 @@ const CardMenu = ({ data }) => {
                 </div>
                 <div className='menu-item d-flex justify-content-between mt-2'>
                   <div className='d-flex flex-row'>
-                    <img className='menu-logo' src={Waze.src} alt="waze" />
+                    <img className='menu-logo' src="https://ik.imagekit.io/kaddigital/waze.png" alt="waze" />
                     <div className='d-flex align-items-center ms-3'>
                       <h6 className='menu-name mt-2'>Waze</h6>
                     </div>
@@ -200,7 +197,7 @@ const CardMenu = ({ data }) => {
               <div className='menu-content'>
                 <div className='menu-item d-flex justify-content-between'>
                   <div className='d-flex flex-row'>
-                    <img className='menu-logo' src={GoogleCalendar} alt="google-maps" />
+                    <img className='menu-logo' src="https://ik.imagekit.io/kaddigital/google-calendar.png" alt="google-calendar" />
                     <div className='d-flex align-items-center ms-3'>
                       <h6 className='menu-name mt-2'>Google Calendar</h6>
                     </div>
@@ -282,7 +279,7 @@ const CardMenu = ({ data }) => {
               <div className='menu-content'>
                 <div className='menu-item d-flex justify-content-between'>
                   <div className='d-flex flex-row'>
-                    <img className='menu-logo' src={GoogleMaps} alt="google-maps" />
+                    <img className='menu-logo' src="https://ik.imagekit.io/kaddigital/google-maps.png" alt="google-maps" />
                     <div className='d-flex align-items-center ms-3'>
                       <h6 className='menu-name mt-2'>Google Maps</h6>
                     </div>
@@ -300,7 +297,7 @@ const CardMenu = ({ data }) => {
                 </div>
                 <div className='menu-item d-flex justify-content-between mt-2'>
                   <div className='d-flex flex-row'>
-                    <img className='menu-logo' src={Waze} alt="waze" />
+                    <img className='menu-logo' src="https://ik.imagekit.io/kaddigital/waze.png" alt="wazw" />
                     <div className='d-flex align-items-center ms-3'>
                       <h6 className='menu-name mt-2'>Waze</h6>
                     </div>
@@ -378,7 +375,7 @@ const CardMenu = ({ data }) => {
               <div className='menu-content'>
                 <div className='menu-item d-flex justify-content-between'>
                   <div className='d-flex flex-row'>
-                    <img className='menu-logo' src={GoogleCalendar} alt="calendar" />
+                    <img className='menu-logo' src="https://ik.imagekit.io/kaddigital/google-calendar.png" alt="google-calendar" />
                     <div className='d-flex align-items-center ms-3'>
                       <h6 className='menu-name mt-2'>Google Calendar</h6>
                     </div>
