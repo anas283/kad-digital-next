@@ -36,6 +36,7 @@ const WeddingCard = () => {
   const isPause = useSelector(state => state.theme.isPause);
   const [themeName, setThemeName] = useState('');
   const [isMusic, setIsMusic] = useState(0);
+  const [meta, setMeta] = useState([]);
 
   useEffect(() => {
     let names;
@@ -58,6 +59,13 @@ const WeddingCard = () => {
               body
             ).then((res) => {
               if(res.data.status === 'success') {
+
+                const metaData = res.data.data;
+                setMeta({
+                  title: 'Walimatul Urus - ' + metaData.men_short_name + ' & ' + metaData.women_short_name,
+                  description: metaData.wedding_address_name + ' pada ' + GetDayNumber(metaData.wedding_date) + ' ' + GetMonth(metaData.wedding_date) + ' ' + GetYear(metaData.wedding_date),
+                  type: "website",
+                }) 
 
                 const cardData = res.data.data;
                 for(let i=0; i<MockupImages.length; i++) {
@@ -92,6 +100,14 @@ const WeddingCard = () => {
         const demo_theme = localStorage.getItem('demo_theme') || 'elegent';
         setThemeName(demo_theme);
         setIsLive(false);
+
+        setMeta(
+          {
+            title: "Walimatul Urus - Kamal & Diana",
+            description: "Villamay Shah Alam pada 15 April 2023",
+            type: "website",
+          }
+        )
       }
     }
   },[name])
@@ -160,20 +176,8 @@ const WeddingCard = () => {
     }
   };
 
-  const meta = {
-    title: "Walimatul Urus - Kamal & Diana",
-    description: "Villamay Shah Alam pada 15 April 2023",
-    type: "website",
-  }
-
   return (
     <>
-      <Head>
-        <title>{ meta.title }</title>
-        <meta name="description" content={ meta.description } />
-        <meta property="og:title" content={ meta.title } />
-        <meta property="og:description" content={ meta.description } />
-      </Head>
       {/* {(data.length !== 0 && name !== 'demo') &&
         <Head>
           <title>{ 'Walimatul Urus - ' + data.men_short_name + ' & ' + data.women_short_name }</title>
@@ -181,15 +185,15 @@ const WeddingCard = () => {
           <meta property="og:title" content={ 'Walimatul Urus - ' + data.men_short_name + ' & ' + data.women_short_name } />
           <meta property="og:description" content={ data.wedding_address_name + ' pada ' + GetDayNumber(data.wedding_date) + ' ' + GetMonth(data.wedding_date) + ' ' + GetYear(data.wedding_date) } />
         </Head>
-      }
-      {name === 'demo' &&
+      } */}
+      {meta.length !== 0 &&
         <Head>
           <title>{ meta.title }</title>
           <meta name="description" content={ meta.description } />
           <meta property="og:title" content={ meta.title } />
           <meta property="og:description" content={ meta.description } />
         </Head>
-      } */}
+      }
       <audio ref={audioRef} src={musicUrl} />
       {themeName === 'autumn' &&
         <Autumn
