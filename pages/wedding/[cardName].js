@@ -188,6 +188,7 @@ const WeddingCard = ({ metaData }) => {
         <meta name="description" content={ metaData.description } />
         <meta property="og:title" content={ metaData.title } />
         <meta property="og:description" content={ metaData.description } />
+        <meta property="og:image" content={ metaData.image } />
       </Head>
       <audio ref={audioRef} src={musicUrl} />
       {themeName === 'autumn' &&
@@ -277,7 +278,7 @@ export const getServerSideProps = async (context) => {
     metaData = {
       title: "Walimatul Urus - Kamal & Diana",
       description: "Villamay Shah Alam pada 15 April 2023",
-      type: "website",
+      image: "https://ik.imagekit.io/kaddigital/og-image-bahasa.png",
     }
   } else {
     let names;
@@ -306,12 +307,14 @@ export const getServerSideProps = async (context) => {
         metaData = {
           title: "Walimatul Urus - " + data.men_short_name + ' & ' + data.women_short_name,
           description: data.wedding_address_name + ' pada ' + GetDayNumber(data.wedding_date) + ' ' + GetMonth(data.wedding_date) + ' ' + GetYear(data.wedding_date),
+          image: "https://ik.imagekit.io/kaddigital/og-image-bahasa.png",
         }
       }
       else {
         metaData = {
           title: "",
           description: "",
+          image: ""
         }
       }
     })
