@@ -168,7 +168,13 @@ const WeddingCard = () => {
 
   return (
     <>
-      {(data.length !== 0 && name !== 'demo') &&
+      <Head>
+        <title>{ meta.title }</title>
+        <meta name="description" content={ meta.description } />
+        <meta property="og:title" content={ meta.title } />
+        <meta property="og:description" content={ meta.description } />
+      </Head>
+      {/* {(data.length !== 0 && name !== 'demo') &&
         <Head>
           <title>{ 'Walimatul Urus - ' + data.men_short_name + ' & ' + data.women_short_name }</title>
           <meta name="description" content={ data.wedding_address_name + ' pada ' + GetDayNumber(data.wedding_date) + ' ' + GetMonth(data.wedding_date) + ' ' + GetYear(data.wedding_date) } />
@@ -183,7 +189,7 @@ const WeddingCard = () => {
           <meta property="og:title" content={ meta.title } />
           <meta property="og:description" content={ meta.description } />
         </Head>
-      }
+      } */}
       <audio ref={audioRef} src={musicUrl} />
       {themeName === 'autumn' &&
         <Autumn
