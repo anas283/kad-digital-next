@@ -3,7 +3,6 @@ import { useRouter } from "next/router"
 
 import api from '../../api';
 import { useSelector } from "react-redux";
-import useSound from 'use-sound';
 import Music from "../../components/Music";
 import MockupImages from "../../components/MockupImages";
 
@@ -25,7 +24,7 @@ import GetYear from "../../helpers/GetYear";
 
 const songs = Music();
 
-const WeddingCard = () => {
+const WeddingCard = ({ metaData }) => {
   const router = useRouter();
   const name = router.query.cardName;
 
@@ -176,24 +175,20 @@ const WeddingCard = () => {
     }
   };
 
+  useEffect(() => {
+    if(metaData.title === '') {
+      router.push('/')
+    }
+  },[metaData])
+
   return (
     <>
-      {/* {(data.length !== 0 && name !== 'demo') &&
-        <Head>
-          <title>{ 'Walimatul Urus - ' + data.men_short_name + ' & ' + data.women_short_name }</title>
-          <meta name="description" content={ data.wedding_address_name + ' pada ' + GetDayNumber(data.wedding_date) + ' ' + GetMonth(data.wedding_date) + ' ' + GetYear(data.wedding_date) } />
-          <meta property="og:title" content={ 'Walimatul Urus - ' + data.men_short_name + ' & ' + data.women_short_name } />
-          <meta property="og:description" content={ data.wedding_address_name + ' pada ' + GetDayNumber(data.wedding_date) + ' ' + GetMonth(data.wedding_date) + ' ' + GetYear(data.wedding_date) } />
-        </Head>
-      } */}
-      {meta.length !== 0 &&
-        <Head>
-          <title>{ meta.title }</title>
-          <meta name="description" content={ meta.description } />
-          <meta property="og:title" content={ meta.title } />
-          <meta property="og:description" content={ meta.description } />
-        </Head>
-      }
+      <Head>
+        <title>{ metaData.title }</title>
+        <meta name="description" content={ metaData.description } />
+        <meta property="og:title" content={ metaData.title } />
+        <meta property="og:description" content={ metaData.description } />
+      </Head>
       <audio ref={audioRef} src={musicUrl} />
       {themeName === 'autumn' &&
         <Autumn
@@ -270,3 +265,61 @@ const WeddingCard = () => {
 }
 
 export default WeddingCard
+
+export const getServerSideProps = async (context) => {
+  const name = context.params.cardName
+  let metaData = null;
+
+  // const api_url = "http://localhost:8080";
+  const api_url = "https://kad-digital.up.railway.app";
+
+  if(name === 'demo') {
+    metaData = {
+      title: "Walimatul Urus - Kamal & Diana",
+      description: "Villamay Shah Alam pada 15 April 2023",
+      type: "website",
+    }
+  } else {
+    let names;
+    let men_short_name;
+    let women_short_name;
+    names = name.split("-");
+    men_short_name = names[0];
+    women_short_name = names[1];
+    const body = {
+      men_short_name: men_short_name,
+      women_short_name: women_short_name
+    }
+    
+    await fetch(api_url + '/api/card/get-by-name', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    })
+    .then((response) => response.json())
+    .then((res) =>{
+      let data = res.data;
+      if(data) {
+        metaData = {
+          title: "Walimatul Urus - " + data.men_short_name + ' & ' + data.women_short_name,
+          description: data.wedding_address_name + ' pada ' + GetDayNumber(data.wedding_date) + ' ' + GetMonth(data.wedding_date) + ' ' + GetYear(data.wedding_date),
+        }
+      }
+      else {
+        metaData = {
+          title: "",
+          description: "",
+        }
+      }
+    })
+  }
+
+  return {
+    props: {
+      metaData,
+    },
+  };
+};
