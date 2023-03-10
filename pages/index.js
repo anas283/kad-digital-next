@@ -12,6 +12,9 @@ export default function Home() {
           name="description"
           content="Craft beautiful wedding cards that ensure your guests don't miss out on the special event!"
         />
+        <meta property="og:title" content="Kad Digital - Create stunning invitations in minutes." />
+        <meta property="og:description" content="Craft beautiful wedding cards that ensure your guests don't miss out on the special event!" />
+        <meta property="og:image" content="https://ik.imagekit.io/kaddigital/og-image-main.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
