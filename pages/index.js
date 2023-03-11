@@ -16,6 +16,11 @@ export default function Home() {
         <meta property="og:description" content="Craft beautiful wedding cards that ensure your guests don't miss out on the special event!" />
         <meta property="og:image" content="https://ik.imagekit.io/kaddigital/og-image-main.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@whoishodor" />
+        <meta name="twitter:title" content="Kad Digital - Create stunning invitations in minutes." />
+        <meta name="twitter:description" content="Craft beautiful wedding cards that ensure your guests don't miss out on the special event!" />
+        <meta name="twitter:image" content="https://ik.imagekit.io/kaddigital/og-image-main.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
