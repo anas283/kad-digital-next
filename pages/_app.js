@@ -6,6 +6,8 @@ import "../styles/themes.css";
 import store from '../store/store';
 import { Provider } from 'react-redux';
 import { Analytics } from '@vercel/analytics/react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function MyApp({ Component, pageProps }) {
 
@@ -14,6 +16,7 @@ function MyApp({ Component, pageProps }) {
     require('bootstrap/dist/js/bootstrap.bundle.min');
     require('slick-carousel/slick/slick.css');
     require('slick-carousel/slick/slick-theme.css');
+    AOS.init();
   },[])
 
   return (
