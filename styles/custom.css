@@ -238,6 +238,24 @@ label {
   text-decoration: none;
 }
 
+.btn-forgot {
+  color: black;
+  margin-top: -8px;
+  text-decoration: none;
+}
+.btn-forgot:hover {
+  color: black;
+  text-decoration: underline;
+}
+.btn-resend {
+  color: black;
+  margin-top: -4px;
+  text-decoration: underline !important;
+}
+.btn-resend:hover {
+  color: black !important;
+}
+
 @media only screen and (max-width: 768px) {
   .navbar-kd .logo {
     margin-left: 10px;

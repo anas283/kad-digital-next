@@ -92,8 +92,11 @@ const Login = () => {
                   {errors.password && errors.password.message}
                 </p>
               </div>
+              <div className="d-flex justify-content-end">
+                <Link href="/forgot-password" className="btn-forgot">forgot password?</Link>
+              </div>
               <div className='d-flex flex-column'>
-                <button type='submit' className='btn btn-dark mt-2'>Login</button>
+                <button type='submit' className='btn btn-dark mt-3'>Login</button>
               </div>
             </form>
           </div>
