@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import api from '../api'
 import { refreshGuest } from "../store/themeReducer";
+import { useTranslation } from 'react-i18next';
 
 const RvspForm = ({ data }) => {
   const { handleSubmit, register, reset, formState: { errors } } = useForm();
@@ -12,6 +13,7 @@ const RvspForm = ({ data }) => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const onSubmit = async (values) => {
     values.card_id = data.id;
@@ -64,7 +66,7 @@ const RvspForm = ({ data }) => {
           <h5 className="text-center text-black fw-600">RVSP</h5>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group mt-3">
-              <label>Nama</label>
+              <label>{ t('nama') }</label>
               <input type="text" className={ errors.name ? 'form-control mt-1 border-danger':'form-control mt-1' }
                 {...register("name", {
                   required: "Nama diperlukan",
@@ -77,7 +79,7 @@ const RvspForm = ({ data }) => {
               )}
             </div>
             <div className="form-group mt-3">
-              <label>Bilangan Kehadiran</label>
+              <label>{ t('bilangan_hadiran') }</label>
               <input type="number" className={ errors.total_guest ? 'form-control mt-1 border-danger':'form-control mt-1' }
                 {...register("total_guest", {
                   required: "Bilangan Kehadiran diperlukan",
@@ -90,29 +92,29 @@ const RvspForm = ({ data }) => {
               )}
             </div>
             <div className="form-group mt-2">
-              <label>Ucapan</label>
+              <label>{ t('ucapan') }</label>
               <textarea type="text" className="form-control mt-1" rows="5"
                 {...register("message")}
               />
             </div>
             <div className="form-group mt-2">
-              <label>Sahkan Kehadiran</label>
+              <label>{ t('sahkan_kehadiran') }</label>
               <div className="dropdown">
                 <button className="btn btn-light dropdown-toggle w-100 mt-1 text-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  { status }
+                  { t(status) }
                 </button>
                 <ul className="dropdown-menu">
                   {statusList.map((status, key) => {
                     return (
                       <li key={key} onClick={() => setStatus(status)}>
-                        <div className="dropdown-item">{ status }</div>
+                        <div className="dropdown-item">{ t(status) }</div>
                       </li>
                     )
                   })}
                 </ul>
               </div>
             </div>
-            <button type="submit" className="btn btn-dark mt-4 w-100">Hantar</button>
+            <button type="submit" className="btn btn-dark mt-4 w-100">{ t('hantar') }</button>
             { error &&   
               <div className="alert alert-danger mt-3">
                 { error }
@@ -135,15 +137,15 @@ const RvspForm = ({ data }) => {
           <h5 className="text-center text-black fw-600">RVSP</h5>
           <form>
             <div className="form-group mt-3">
-              <label>Nama</label>
+              <label>{ t('nama') }</label>
               <input type="text" className="form-control mt-1"></input>
             </div>
             <div className="form-group mt-3">
-              <label>Bilangan Kehadiran</label>
+              <label>{ t('bilangan_hadiran') }</label>
               <input type="text" className="form-control mt-1"></input>
             </div>
             <div className="form-group mt-2">
-              <label>Ucapan</label>
+              <label>{ t('ucapan') }</label>
               <textarea
                 type="text"
                 className="form-control mt-1"
@@ -151,7 +153,7 @@ const RvspForm = ({ data }) => {
               ></textarea>
             </div>
             <div className="form-group mt-2">
-              <label>Sahkan Kehadiran</label>
+              <label>{ t('sahkan_kehadiran') }</label>
               <div className="dropdown">
                 <button
                   className="btn btn-light dropdown-toggle w-100 mt-1 text-start"
@@ -159,22 +161,22 @@ const RvspForm = ({ data }) => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Hadir
+                  { t('Hadir') }
                 </button>
                 <ul className="dropdown-menu">
                   <li>
-                    <div className="dropdown-item">Hadir</div>
+                    <div className="dropdown-item">{ t('Hadir') }</div>
                   </li>
                   <li>
-                    <div className="dropdown-item">Tidak Hadir</div>
+                    <div className="dropdown-item">{ t('Tidak Hadir') }</div>
                   </li>
                   <li>
-                    <div className="dropdown-item">Tidak Pasti</div>
+                    <div className="dropdown-item">{ t('Tidak Pasti') }</div>
                   </li>
                 </ul>
               </div>
             </div>
-            <button className="btn btn-dark mt-4 w-100">Hantar</button>
+            <button className="btn btn-dark mt-4 w-100">{ t('hantar') }</button>
           </form>
         </div>
       }

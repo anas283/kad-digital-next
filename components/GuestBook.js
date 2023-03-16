@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Slider from "react-slick";
 import api from '../api';
 import { refreshGuest } from "../store/themeReducer";
+import { useTranslation } from 'react-i18next';
 
 const GuestBook = ({ data }) => {
   const [wishes, setWishes] = useState([]);
@@ -11,6 +12,7 @@ const GuestBook = ({ data }) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const name = router.query.name;
+  const { t } = useTranslation();
 
   const getGuestWishes = useCallback(async () => {
     try {
@@ -54,7 +56,7 @@ const GuestBook = ({ data }) => {
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
           >
-          <h5 className="title-bold text-center fw-600">Ucapan</h5>
+          <h5 className="title-bold text-center fw-600">{ t('ucapan') }</h5>
     
           <Slider {...settings} className="guest-book-swiper">
             {wishes.map((wish,key) => {
@@ -78,7 +80,7 @@ const GuestBook = ({ data }) => {
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
           >
-          <h5 className="title-bold text-center fw-600">Ucapan</h5>
+          <h5 className="title-bold text-center fw-600">{ t('ucapan') }</h5>
     
           <Slider {...settings} className="guest-book-swiper">
             <div className="wish-content d-flex justify-content-center align-items-center">

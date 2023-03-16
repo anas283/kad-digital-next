@@ -8,6 +8,8 @@ import { Provider } from 'react-redux';
 import { Analytics } from '@vercel/analytics/react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { appWithI18Next, useSyncLanguage } from "ni18n";
+import { ni18nConfig } from '../ni18n.config';
 
 function MyApp({ Component, pageProps }) {
 
@@ -23,9 +25,9 @@ function MyApp({ Component, pageProps }) {
     <>
       <Provider store={store}>
         <Component {...pageProps} />
-        <Analytics />
+        {/* <Analytics /> */}
       </Provider>
     </>
   );
 }
-export default MyApp;
+export default appWithI18Next(MyApp, ni18nConfig);

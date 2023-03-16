@@ -42,6 +42,8 @@ const create = () => {
   const theme = useSelector((state) => state.theme.theme);
   const song = useSelector((state) => state.theme.song);
   const [userId, setUserId] = useState();
+  const languages = ['Bahasa Melayu','English'];
+  const [language, setLanguage] = useState(languages[0]);
 
   useEffect(() => {
     if(typeof window !== "undefined") {
@@ -101,6 +103,13 @@ const create = () => {
     body.total_view = 0;
     body.music_url = song;
     body.uid = userId;
+
+    if(language === 'Bahasa Melayu') {
+      body.language = 'bm';
+    }
+    else if(language === 'English') {
+      body.language = 'en';
+    }
 
     localStorage.setItem('create_data', JSON.stringify(body));
 
@@ -726,6 +735,29 @@ const create = () => {
                         </div>
                       )
                     })}
+                  </div>
+                  <div>
+                    <h5>Pilih Bahasa</h5>
+                    <div className="dropdown mt-3">
+                      <button className='btn btn-light px-3 pe-2' data-bs-toggle="dropdown" aria-expanded="false">
+                        { language } 
+                        <FeatherIcon icon="chevron-down" size={18} className="ms-2" />
+                      </button>
+                      <ul className="dropdown-menu border-0 shadow-sm">
+                        {languages.map((language, key) => {
+                          return (
+                            <li
+                              className="px-3 py-1 dropdown-item" 
+                              key={key}
+                              onClick={() => setLanguage(language)}
+                              style={{ cursor: 'pointer' }}
+                            >
+                              { language }
+                            </li>
+                          )
+                        })}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               }

@@ -21,6 +21,10 @@ import { useRef } from 'react';
 import GetDayNumber from "../../helpers/GetDayNumber";
 import GetMonth from "../../helpers/GetMonth";
 import GetYear from "../../helpers/GetYear";
+import { useSyncLanguage } from "ni18n";
+import { changeLanguage } from "i18next";
+import i18n from "../../i18n";
+import { useTranslation } from "react-i18next";
 
 const songs = Music();
 
@@ -36,6 +40,7 @@ const WeddingCard = ({ metaData }) => {
   const [themeName, setThemeName] = useState('');
   const [isMusic, setIsMusic] = useState(0);
   const [meta, setMeta] = useState([]);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     let names;
@@ -78,6 +83,9 @@ const WeddingCard = ({ metaData }) => {
                     setThemeName(mockup_name);
                   }
                 }
+
+                console.log(cardData.language);
+                i18n.changeLanguage(cardData.language);
 
                 setData(res.data.data);
                 setMusicUrl(res.data.data.music_url);

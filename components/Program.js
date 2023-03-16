@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import GetTimeMinute from '../helpers/GetTimeMinute';
+import { useTranslation } from 'react-i18next';
 
 const Program = ({ data }) => {
   const [events, setEvents] = useState([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if(data) {
@@ -22,7 +24,7 @@ const Program = ({ data }) => {
             data-aos-duration="1000"
             data-aos-easing="ease-in-out"
           >
-          <h5 className="title-bold text-center">Atur Cara</h5>
+          <h5 className="title-bold text-center">{ t('atur_cara') }</h5>
           <div className="col-9 mx-auto mt-4">
             {events.map((event, id) => {
               return (
@@ -41,7 +43,7 @@ const Program = ({ data }) => {
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
           >
-          <h5 className="title-bold text-center">Atur Cara</h5>
+          <h5 className="title-bold text-center">{ t('atur_cara') }</h5>
           <div className="col-9 mx-auto mt-4">
             <div className="box d-flex flex-row">
               <div className="col-4 time info-bold">12:00 PM</div>

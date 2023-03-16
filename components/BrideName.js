@@ -1,17 +1,18 @@
-// import "../styles/Demo.css";
-// import "../styles/Themes.css";
 import GetDayNumber from '../helpers/GetDayNumber';
 import GetMonth from '../helpers/GetMonth';
 import GetYear from '../helpers/GetYear';
+import { useTranslation } from 'react-i18next';
 
 const BrideName = ({ data, color }) => {
+  const { t } = useTranslation();
+
   return (
     <>
       {data &&      
         <div className="main-content bride-content">
           <div>
             <h6 className="main-title">
-              Walimatul Urus
+              { t('walimatul_urus') }
             </h6>
             <h4 className="bride-name text-center text-curve d-flex flex-column my-4"
               style={{ color: color }}  
@@ -40,7 +41,7 @@ const BrideName = ({ data, color }) => {
         <div className="main-content bride-content">
           <div>
             <h6 className="main-title">
-              Walimatul Urus
+              { t('walimatul_urus') }
             </h6>
             <h4 className="bride-name text-center text-curve d-flex flex-column my-4"
               style={{ color: color }}  
