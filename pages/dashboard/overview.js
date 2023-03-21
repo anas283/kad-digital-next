@@ -3,6 +3,7 @@ import Dashboard from "./index"
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import { useEffect, useState } from "react";
 import api from '../../api';
+import Link from "next/link";
 
 const overview = () => {
 
@@ -83,10 +84,27 @@ const overview = () => {
         <meta property="og:title" content={ meta.title } />
         <meta property="og:description" content={ meta.description } />
       </Head>
-      <div className="overview-section p-3 ml-sm">
+      <div className="overview-section p-3 ml-sm w-100-sm">
         <div className="d-flex align-items-center">
           <h5 className="page-title">Overview</h5>
         </div>
+
+        {card.length === 0 && 
+          <div className="mt-2">
+            <div className="card shadow-sm border-0 p-4 mb-3">
+              <h5>Create wedding card</h5>
+              <h6 className="text-secondary" style={{ fontWeight: '400' }}>
+                Click button below to craft stunning digital invitation card for your wedding day
+              </h6>
+              <div>
+                <Link href="/dashboard/create" className="btn btn-purple px-4 mt-2">
+                  Create card
+                </Link>
+              </div>
+            </div>
+          </div>
+        }
+
         <div className="mt-2">
           <div className="row">
             <div className="col-12 col-md-6 col-lg-4">

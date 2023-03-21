@@ -450,4 +450,7 @@
   .card-rvsp {
     overflow-x: scroll;
   }
+  .w-100-sm {
+    width: 100vw;
+  }
 }

@@ -152,7 +152,7 @@ const editGift = () => {
         <meta property="og:title" content={ meta.title } />
         <meta property="og:description" content={ meta.description } />
       </Head>
-      <div className="p-3 ml-sm">
+      <div className="p-3 ml-sm w-100-sm">
         <div className="d-flex align-items-center">
           <h5 className="page-title">Add Gift</h5>
         </div>

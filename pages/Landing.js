@@ -47,20 +47,6 @@ const Landing = () => {
                 <div className="feature-item mt-5">
                   <div className="d-flex justify-content-center mb-4">
                     <div className="icon-box">
-                      <FeatherIcon icon="layers" size={24} />
-                    </div>
-                  </div>
-                  <h5 className="fw-500 text-center fw-600">Multiple Themes</h5>
-                  <h6 className="text-secondary text-center">
-                    {/* Your digital invitation will look amazing on all types of devices and screens. */}
-                    Beautiful custom themes made only for you
-                  </h6>
-                </div>
-              </div>
-              <div className="col-8 col-md-6 col-lg-3 mx-auto">
-                <div className="feature-item mt-5">
-                  <div className="d-flex justify-content-center mb-4">
-                    <div className="icon-box">
                       <FeatherIcon icon="map" size={24} />
                     </div>
                   </div>
@@ -80,6 +66,19 @@ const Landing = () => {
                   <h5 className="fw-500 text-center fw-600">Call</h5>
                   <h6 className="text-secondary text-center">
                     Representatives to be contacted on the wedding day
+                  </h6>
+                </div>
+              </div>
+              <div className="col-8 col-md-6 col-lg-3 mx-auto">
+                <div className="feature-item mt-5">
+                  <div className="d-flex justify-content-center mb-4">
+                    <div className="icon-box">
+                      <FeatherIcon icon="gift" size={24} />
+                    </div>
+                  </div>
+                  <h5 className="fw-500 text-center fw-600">Gift</h5>
+                  <h6 className="text-secondary text-center">
+                    Receive gift from your wedding guest
                   </h6>
                 </div>
               </div>
