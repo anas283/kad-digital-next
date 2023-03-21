@@ -18,6 +18,7 @@ const Navbar = () => {
             <div className="navigation d-flex flex-row d-flex align-items-center">
               <Link href="/" className="menu p-2 ms-4">Home</Link>
               <Link href="/themes" className="menu p-2 ms-4">Themes</Link>
+              <Link href="/price" className="menu p-2 ms-4">Pricing</Link>
               <Link href="/contact" className="menu p-2 ms-4">Contact Us</Link>
               <div className="menu ms-5">
                 <Link href="/login">
@@ -39,6 +40,7 @@ const Navbar = () => {
               <div className="d-flex flex-column">
                 <Link href="/" className="menu">Home</Link>
                 <Link href="/themes" className="menu">Themes</Link>
+                <Link href="/price" className="menu">Pricing</Link>
                 <Link href="/contact" className="menu">Contact Us</Link>
                 <div className="menu d-flex justify-content-center">
                   <Link href="/login">
