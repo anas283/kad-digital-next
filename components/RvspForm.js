@@ -20,6 +20,8 @@ const RvspForm = ({ data }) => {
     values.uid = data.uid;
     values.status = status;
 
+    localStorage.setItem('guest', values.name)
+
     try {
       await api.post('/api/attendance/create', { 
         card_id: values.card_id,

@@ -1,6 +1,9 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/storage';
 
+import { initializeApp } from "firebase/app";
+import { getStorage } from "firebase/storage";
+
 const firebaseConfig = {
   apiKey: "AIzaSyAZTOTen93OzYn5ApRrFBjpMdM09WqPoSc",
   authDomain: "kad-digital-73037.firebaseapp.com",
@@ -11,7 +14,5 @@ const firebaseConfig = {
   measurementId: "G-2L4QV8Y24Q"
 };
   
-firebase.initializeApp(firebaseConfig);
-var storage = firebase.storage();
-  
-export default storage;
+export const app = initializeApp(firebaseConfig);
+export const storage = getStorage(app);

@@ -55,6 +55,13 @@ const Dashboard = ({children}) => {
                   <h6 className="option-name">Guests</h6>
                 </Link>
                 <Link 
+                  href="/dashboard/gift"
+                  className={(router.pathname == "/dashboard/gift" || router.pathname == "/dashboard/add-gift") ? "option active" : "option"}
+                  >
+                  <FeatherIcon icon="gift" size={20} />
+                  <h6 className="option-name">Gift</h6>
+                </Link>
+                <Link 
                   href="/dashboard/feedback" 
                   className={router.pathname == "/dashboard/feedback" ? "option active" : "option"}
                   >
@@ -108,6 +115,13 @@ const Dashboard = ({children}) => {
                         >
                         <FeatherIcon icon="file-text" size={20} />
                         <h6 className="option-name">Guests</h6>
+                      </Link>
+                      <Link 
+                        href="/dashboard/gift"
+                        className={(router.pathname == "/dashboard/gift" || router.pathname == "/dashboard/add-gift") ? "option active" : "option"}
+                        >
+                        <FeatherIcon icon="gift" size={20} />
+                        <h6 className="option-name">Gift</h6>
                       </Link>
                       <Link 
                         href="/dashboard/feedback" 

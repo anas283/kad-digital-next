@@ -256,6 +256,12 @@ label {
   color: black !important;
 }
 
+@media only screen and (max-width: 991px) {
+  .menu-btn {
+    display: block !important;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .navbar-kd .logo {
     margin-left: 10px;
@@ -279,9 +285,6 @@ label {
     display: flex;
     justify-content: center;
     text-decoration: none;
-  }
-  .menu-btn {
-    display: block !important;
   }
   .side-menu-open {
     right: 0;

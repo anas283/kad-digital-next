@@ -84,7 +84,6 @@ const WeddingCard = ({ metaData }) => {
                   }
                 }
 
-                console.log(cardData.language);
                 i18n.changeLanguage(cardData.language);
 
                 setData(res.data.data);
