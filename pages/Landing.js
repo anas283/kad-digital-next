@@ -131,7 +131,7 @@ const Landing = () => {
             <h1 className="text-center">Pricing</h1>
             <h5 className="text-center text-secondary">Always know what you will pay</h5>
             <div className="col-8 col-md-4 col-lg-3 mx-auto mt-4">
-              <div class="card p-3">
+              <div className="card p-3">
                 <h6 className="text-secondary text-center">Premium</h6>
                 <h2 className="text-center">RM55</h2>
                 <h6 className="text-secondary text-center">/one time</h6>
