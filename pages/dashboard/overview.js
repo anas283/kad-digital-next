@@ -89,7 +89,7 @@ const overview = () => {
           <h5 className="page-title">Overview</h5>
         </div>
 
-        {card.length === 0 && 
+        {/* {card.length === 0 && 
           <div className="mt-2">
             <div className="card shadow-sm border-0 p-4 mb-3">
               <h5>Create wedding card</h5>
@@ -103,7 +103,7 @@ const overview = () => {
               </div>
             </div>
           </div>
-        }
+        } */}
 
         <div className="mt-2">
           <div className="row">

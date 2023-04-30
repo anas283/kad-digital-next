@@ -773,7 +773,7 @@ const create = () => {
                   </Button>
                 )}
                 {current === steps.length - 1 && (
-                  <Button type="primary" onClick={handleSubmit(onSubmit)}>
+                  <Button type="primary" onClick={handleSubmit(onSubmit)} disabled>
                     Pay Now - RM55
                   </Button>
                 )}

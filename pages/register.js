@@ -125,7 +125,7 @@ const Register = () => {
                     </p>
                   </div>
                   <div className='d-flex justify-content-start'>
-                    <button type='submit' className='btn btn-dark mt-2 w-100'>Register</button>
+                    <button type='submit' className='btn btn-dark mt-2 w-100' disabled>Register</button>
                   </div>
                 </form>
               </div>

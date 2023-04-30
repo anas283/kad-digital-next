@@ -136,19 +136,20 @@ const cards = () => {
           <div className="h-100 d-flex justify-content-center align-items-center">
             <div className="p-3">
               <div className="empty-card">
-                <div className="d-flex justify-content-center align-items-center">
+                {/* <div className="d-flex justify-content-center align-items-center">
                   <FeatherIcon icon="plus-circle" color="#1467EA" size={50} />
-                </div>
-                <h4 className="title text-center mt-3">Create new card</h4>
+                </div> */}
+                {/* <h4 className="title text-center mt-3">Create new card</h4> */}
                 <h6 className="subtitle text-center col-10 mx-auto">
-                  Please click button below to create your first wedding card
+                  No data to display
+                  {/* Please click button below to create your first wedding card */}
                 </h6>
               </div>
-              <div className="d-flex justify-content-center mt-4">
+              {/* <div className="d-flex justify-content-center mt-4">
                 <Link href="/dashboard/create" className="btn btn-purple px-4">
                   Create card
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         }
