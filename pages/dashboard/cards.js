@@ -83,10 +83,10 @@ const cards = () => {
           <div className="p-3 pb-0">
             <div className="d-flex align-items-center justify-content-between">
               <h5 className="page-title">Card</h5>
-              {/* <Link href="/dashboard/create" className="btn btn-purple px-4" style={{ marginTop: '-8px' }}>
+              <Link href="/dashboard/create" className="btn btn-purple px-4" style={{ marginTop: '-8px' }}>
                 <FeatherIcon icon="plus" size={16} className="plus-icon" />
                 Create card
-              </Link> */}
+              </Link>
             </div>
           </div>
         }
